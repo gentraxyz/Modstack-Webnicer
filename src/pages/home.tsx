@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardBody } from "@heroui/react";
 import previewImg from "../images/launcher-preview.png";
+import iconImg from "../images/placeholder.png";
 
 const DOWNLOAD_URL = "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack-setup.exe";
 
@@ -34,7 +35,10 @@ function App() {
       <nav>
         <a className="logo" href="#">
           <div className="logo-mark">
-            <img src="./src/images/placeholder.png" alt="logo" />
+            <img 
+              src={iconImg}
+              alt="logo" 
+            />
           </div>
           <span>Modstack</span>
         </a>
@@ -154,7 +158,11 @@ function App() {
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <img src="./src/images/placeholder.png" alt="logo" style={{ width: '22px', height: '22px' }} />
+                <img 
+                  src={iconImg} 
+                  alt="logo" 
+                  style={{ width: '22px', height: '22px' }} 
+                />
                 <span style={{ fontWeight: 700, fontSize: '15px', color: '#e2e8f0' }}>Modstack</span>
               </div>
               <p style={{ fontSize: '12px', color: '#4a6080', margin: 0, maxWidth: '220px', lineHeight: '1.6' }}>
