@@ -10,25 +10,27 @@ function App() {
   const [alreadyDownloaded, setAlreadyDownloaded] = React.useState(false);
 
   React.useEffect(() => {
-    const stored = localStorage.getItem('modstack_installs');
-    setInstallCount(stored ? parseInt(stored) : 0);
-
+    fetch('/api/installs')
+      .then(r => r.json())
+      .then(d => setInstallCount(d.count));
+  
     const downloaded = localStorage.getItem('modstack_downloaded');
     setAlreadyDownloaded(downloaded === 'true');
   }, []);
-
+  
   const handleInstall = () => {
     if (!alreadyDownloaded) {
-      const next = (installCount ?? 0) + 1;
-      setInstallCount(next);
-      localStorage.setItem('modstack_installs', String(next));
+      fetch('/api/installs', { method: 'POST' })
+        .then(r => r.json())
+        .then(d => setInstallCount(d.count));
+  
       localStorage.setItem('modstack_downloaded', 'true');
       setAlreadyDownloaded(true);
     }
-
+  
     window.location.href = DOWNLOAD_URL;
   };
-
+  
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#0f1923', color: '#e2e8f0', minHeight: '100vh', overflow: 'hidden' }}>
 
