@@ -77,7 +77,7 @@ function App() {
 
           <h1>Descarga Modstack<br />para Windows</h1>
 
-          <p>Modstack es un lanzador único de código abierto que te permite jugar a tus mods favoritos y mantenerlos actualizados, todo en un práctico paquete.</p>
+          <p>Modstack es un lanzador único que te permite jugar a tus mods favoritos y mantenerlos actualizados, todo en un práctico paquete.</p>
 
           <div className="hero-btns">
             <button className="btn-download" onClick={handleInstall}>
