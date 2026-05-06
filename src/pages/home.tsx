@@ -48,13 +48,6 @@ function App() {
         <div className="nav-center"></div>
 
         <div className="nav-right">
-          <button className="btn-signin">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9.5 12.5v-.833A2.667 2.667 0 006.833 9H3.167A2.667 2.667 0 00.5 11.667V12.5" stroke="black" strokeWidth="1.4" strokeLinecap="round"/><circle cx="5" cy="4.5" r="2.5" stroke="black" strokeWidth="1.4"/><path d="M11 4.5v5M13.5 7H8.5" stroke="black" strokeWidth="1.4" strokeLinecap="round"/></svg>
-            Sign in
-          </button>
-          <button className="btn-icon">
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="2.5" stroke="currentColor" strokeWidth="1.4"/><path d="M8.5 1.5v1.3M8.5 14.2v1.3M15 8.5h-1.3M3.3 8.5H2M12.7 4.3l-.92.92M5.22 11.78l-.92.92M12.7 12.7l-.92-.92M5.22 5.22l-.92-.92" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
-          </button>
         </div>
       </nav>
 
