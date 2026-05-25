@@ -75,13 +75,13 @@ function App() {
         <div className="hero-content">
           <div className="badge">Alpha Release v0.0.3</div>
 
-          <h1>Descarga Modstack<br />para Windows</h1>
+          <h1>Download Modstack<br />for Windows</h1>
 
-          <p>Modstack es un lanzador único que te permite jugar a tus mods favoritos y mantenerlos actualizados, todo en un práctico paquete.</p>
+          <p>Modstack is a unique launcher that lets you play your favorite mods and keep them up to date, all in one handy package.</p>
 
           <div className="hero-btns">
             <button className="btn-download" onClick={handleInstall}>
-              Instalar Modstack App
+              Install Modstack App
             </button>
 
             <div style={{
@@ -102,7 +102,7 @@ function App() {
                 {installCount !== null ? installCount.toLocaleString() : '—'}
               </span>
               <span style={{ fontSize: '13px', color: '#4a6080' }}>
-                Descargas
+                Downloads
               </span>
             </div>
           </div>
@@ -120,7 +120,7 @@ function App() {
               <CardBody className="p-0">
                 <img
                   src={previewImg}
-                  alt="Prime Launcher Preview"
+                  alt="Modstack Launcher Preview"
                   className="w-full h-[400px] md:h-[515px] object-cover pointer-events-none select-none"
                 />
               </CardBody>
@@ -161,13 +161,13 @@ function App() {
                 <span style={{ fontWeight: 700, fontSize: '15px', color: '#e2e8f0' }}>Modstack</span>
               </div>
               <p style={{ fontSize: '12px', color: '#4a6080', margin: 0, maxWidth: '220px', lineHeight: '1.6' }}>
-                Lanzador de Minecraft custom para gestionar y jugar tus mods favoritos.
+                Custom Minecraft launcher to manage and play your favorite mods.
               </p>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#3a5070', fontWeight: 600 }}>
-                Comunidad
+                Community
               </span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <a href="https://twitter.com/primeisonline" target="_blank" rel="noopener noreferrer" style={socialLinkStyle}>
@@ -190,7 +190,7 @@ function App() {
                 Legal
               </span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <a href="/terms" style={legalLinkStyle}>Términos y Condiciones</a>
+                <a href="/terms" style={legalLinkStyle}>Terms & Conditions</a>
               </div>
             </div>
           </div>
@@ -205,12 +205,12 @@ function App() {
             gap: '8px',
           }}>
             <span style={{ fontSize: '12px', color: '#2e4060' }}>
-              © 2026 Modstack. Todos los derechos reservados.
+              © 2026 Modstack. All rights reserved.
             </span>
             <span style={{ fontSize: '12px', color: '#2e4060' }}>
-              Hecho con 💚 por @primeisonline
+              Made with 💚 by @primeisonline
               <br />
-              apoyo: @fitzxel & @gekoxd
+              support: @fitzxel & @gekoxd
             </span>
           </div>
         </div>

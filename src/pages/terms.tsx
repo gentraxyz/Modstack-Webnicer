@@ -59,12 +59,12 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
           <div>
             <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">
               <span className="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
-                Términos y Condiciones
+                Terms & Conditions
               </span>
-              <span className="text-white"> de Modstack</span>
+              <span className="text-white"> of Modstack</span>
             </h1>
             <div className="mt-1 text-sm text-white/45">
-              Última actualización: Mayo 2026
+              Last updated: May 2026
             </div>
           </div>
           <Button
@@ -72,107 +72,106 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
             onPress={handleClose}
             className="text-white/70 hover:text-white"
           >
-            Volver
+            Go back
           </Button>
         </div>
       </header>
 
       <main className="relative z-10 mx-auto max-w-5xl px-5 md:px-8 py-8 md:py-12">
         <p className="text-sm leading-relaxed text-white/70">
-          Al descargar, instalar o utilizar{" "}
+          By downloading, installing, or using{" "}
           <span className="text-green-500 font-semibold">Modstack</span>,
-          aceptas automáticamente todos los términos y condiciones descritos en este documento.
-          Si no estás de acuerdo con alguno de ellos, debes desinstalar la aplicación de forma inmediata
-          y abstenerte de utilizarla.
+          you automatically agree to all the terms and conditions described in this document.
+          If you disagree with any of them, you must uninstall the application immediately
+          and refrain from using it.
         </p>
 
-        <Section title="1. Titularidad y Propiedad Intelectual">
+        <Section title="1. Ownership and Intellectual Property">
           <p className="text-sm leading-relaxed text-white/70">
-            Modstack, incluyendo su código fuente, diseño, logotipos, recursos gráficos, multimedia y cualquier
-            otro elemento asociado, es propiedad exclusiva de sus desarrolladores. Todos los derechos están
-            reservados. Ningún elemento de la Aplicación podrá ser reproducido, distribuido, modificado o
-            utilizado con fines comerciales sin autorización expresa y por escrito de los titulares.
+            Modstack, including its source code, design, logos, graphic resources, multimedia, and any
+            other associated elements, is the exclusive property of its developers. All rights are
+            reserved. No element of the Application may be reproduced, distributed, modified, or
+            used for commercial purposes without the express written authorization of the rights holders.
           </p>
         </Section>
 
-        <Section title="2. Restricciones de Uso">
+        <Section title="2. Usage Restrictions">
           <p className="text-sm leading-relaxed text-white/70">
-            Queda estrictamente prohibido:
+            The following are strictly prohibited:
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-white/70 space-y-1">
-            <li>Distribuir, compartir, revender o sublicenciar la Aplicación o cualquiera de sus componentes a terceros.</li>
-            <li>Reproducir o redistribuir los recursos descargados a través de la Aplicación, incluyendo imágenes, archivos multimedia, configuraciones y documentos internos.</li>
-            <li>Realizar modificaciones, alteraciones, descompilaciones, ingeniería inversa o cualquier intento de acceder al código fuente de la Aplicación.</li>
-            <li>Manipular, eludir o interferir con los sistemas de seguridad, verificación o autenticación de la Aplicación.</li>
-            <li>Utilizar la Aplicación con fines ilegales, fraudulentos o que puedan causar daño a terceros.</li>
+            <li>Distributing, sharing, reselling, or sublicensing the Application or any of its components to third parties.</li>
+            <li>Reproducing or redistributing resources downloaded through the Application, including images, multimedia files, configurations, and internal documents.</li>
+            <li>Modifying, altering, decompiling, reverse engineering, or attempting to access the source code of the Application in any way.</li>
+            <li>Tampering with, bypassing, or interfering with the Application's security, verification, or authentication systems.</li>
+            <li>Using the Application for illegal, fraudulent purposes or in any way that may cause harm to third parties.</li>
           </ul>
         </Section>
 
-        <Section title="3. Exención de Responsabilidad">
+        <Section title="3. Disclaimer of Liability">
           <p className="text-sm leading-relaxed text-white/70">
-            Modstack se proporciona{" "}
-            <span className="text-green-500 font-semibold">"tal cual"</span>, sin garantías de ningún tipo,
-            ya sean explícitas o implícitas. Los desarrolladores no se hacen responsables por:
+            Modstack is provided{" "}
+            <span className="text-green-500 font-semibold">"as is"</span>, without warranties of any kind,
+            whether express or implied. The developers are not responsible for:
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-white/70 space-y-1">
-            <li>Errores, fallos técnicos o interrupciones en el funcionamiento de la Aplicación.</li>
-            <li>Pérdida de datos, archivos o configuraciones derivada del uso de la Aplicación.</li>
-            <li>Daños directos, indirectos, incidentales o consecuentes causados por el uso o la imposibilidad de uso de la Aplicación.</li>
-            <li>Problemas derivados de servicios, plataformas o software de terceros.</li>
-            <li>Incompatibilidades con el sistema operativo u otro software instalado en el equipo del usuario.</li>
+            <li>Bugs, technical failures, or interruptions in the Application's operation.</li>
+            <li>Loss of data, files, or configurations resulting from use of the Application.</li>
+            <li>Direct, indirect, incidental, or consequential damages caused by the use or inability to use the Application.</li>
+            <li>Issues arising from third-party services, platforms, or software.</li>
+            <li>Incompatibilities with the operating system or other software installed on the user's device.</li>
           </ul>
         </Section>
 
-        <Section title="4. Advertencias de Seguridad">
+        <Section title="4. Security Warnings">
           <p className="text-sm leading-relaxed text-white/70">
-            Modstack no cuenta con firma digital de Windows ni con certificado de editor verificado. Como
-            consecuencia, es posible que algunos sistemas de seguridad, como Windows Defender u otros programas
-            antivirus, muestren alertas o falsos positivos al momento de descargar o ejecutar la Aplicación.
+            Modstack does not have a Windows digital signature or a verified publisher certificate. As a
+            result, some security systems such as Windows Defender or other antivirus programs may display
+            alerts or false positives when downloading or running the Application.
           </p>
           <p className="mt-3 text-sm leading-relaxed text-white/70">
-            Estas advertencias no implican que la Aplicación contenga malware, virus o código malicioso de
-            ningún tipo. Al instalar Modstack, el usuario declara comprender esta situación y acepta ejecutar
-            la Aplicación bajo su propia responsabilidad.
+            These warnings do not imply that the Application contains malware, viruses, or malicious code
+            of any kind. By installing Modstack, the user acknowledges this situation and agrees to run
+            the Application at their own risk.
           </p>
         </Section>
 
-        <Section title="5. Uso Bajo Responsabilidad del Usuario">
+        <Section title="5. Use at the User's Own Risk">
           <p className="text-sm leading-relaxed text-white/70">
-            El uso de Modstack es completamente voluntario y se realiza bajo la exclusiva responsabilidad del
-            usuario. Al instalar la Aplicación, el usuario acepta que cualquier consecuencia derivada de su uso,
-            directa o indirecta, será asumida íntegramente por él mismo, eximiendo a los desarrolladores de
-            toda responsabilidad al respecto.
+            Use of Modstack is entirely voluntary and is carried out at the user's sole responsibility. By
+            installing the Application, the user agrees that any consequences arising from its use, whether
+            direct or indirect, will be borne entirely by themselves, releasing the developers from any
+            liability in that regard.
           </p>
         </Section>
 
-        <Section title="6. Actualizaciones y Modificaciones de la Aplicación">
+        <Section title="6. Updates and Modifications to the Application">
           <p className="text-sm leading-relaxed text-white/70">
-            Los desarrolladores de Modstack se reservan el derecho de publicar actualizaciones, modificar
-            funcionalidades, suspender el servicio o discontinuar la Aplicación en cualquier momento y sin
-            previo aviso, sin que ello genere ningún tipo de obligación o responsabilidad frente al usuario.
+            The developers of Modstack reserve the right to release updates, modify features, suspend the
+            service, or discontinue the Application at any time and without prior notice, without incurring
+            any obligation or liability toward the user.
           </p>
         </Section>
 
-        <Section title="7. Modificaciones a los Términos y Condiciones">
+        <Section title="7. Modifications to the Terms and Conditions">
           <p className="text-sm leading-relaxed text-white/70">
-            Modstack se reserva el derecho de modificar el presente documento en cualquier momento. Las
-            modificaciones entrarán en vigor desde el momento de su publicación. El uso continuado de la
-            Aplicación tras la publicación de cambios implica la aceptación total de los términos actualizados.
-            Se recomienda al usuario revisar este documento periódicamente.
+            Modstack reserves the right to modify this document at any time. Changes will take effect upon
+            publication. Continued use of the Application after changes are published implies full acceptance
+            of the updated terms. Users are encouraged to review this document periodically.
           </p>
         </Section>
 
-        <Section title="8. Aceptación de los Términos">
+        <Section title="8. Acceptance of Terms">
           <p className="text-sm leading-relaxed text-white/70">
-            La descarga, instalación o uso de{" "}
-            <span className="text-green-500 font-semibold">Modstack</span> implica la aceptación plena,
-            voluntaria e incondicional de todos los términos y condiciones aquí descritos. En caso de no estar
-            de acuerdo con alguno de ellos, el usuario deberá abstenerse de utilizar la Aplicación.
+            Downloading, installing, or using{" "}
+            <span className="text-green-500 font-semibold">Modstack</span> constitutes full, voluntary,
+            and unconditional acceptance of all the terms and conditions described herein. If you do not
+            agree with any of them, you must refrain from using the Application.
           </p>
         </Section>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/45">
-          © 2026 Modstack. Todos los derechos reservados.
+          © 2026 Modstack. All rights reserved.
         </div>
       </main>
     </div>
