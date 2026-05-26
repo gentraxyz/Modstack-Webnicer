@@ -56,7 +56,7 @@ function App() {
         </svg>
 
         <div className="hero-content">
-          <div className="badge">Beta Release v1.0.0</div>
+          <div className="badge">Beta Release v1.0.2</div>
 
           <h1>Download Modstack<br />for Windows</h1>
 
