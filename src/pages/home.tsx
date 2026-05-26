@@ -6,28 +6,7 @@ import iconImg from "../images/placeholder.png";
 const DOWNLOAD_URL = "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack-setup.exe";
 
 function App() {
-  const [installCount, setInstallCount] = React.useState<number | null>(null);
-  const [alreadyDownloaded, setAlreadyDownloaded] = React.useState(false);
-
-  React.useEffect(() => {
-    fetch('/api/installs')
-      .then(r => r.json())
-      .then(d => setInstallCount(d.count));
-  
-    const downloaded = localStorage.getItem('modstack_downloaded');
-    setAlreadyDownloaded(downloaded === 'true');
-  }, []);
-  
   const handleInstall = () => {
-    if (!alreadyDownloaded) {
-      fetch('/api/installs', { method: 'POST' })
-        .then(r => r.json())
-        .then(d => setInstallCount(d.count));
-  
-      localStorage.setItem('modstack_downloaded', 'true');
-      setAlreadyDownloaded(true);
-    }
-  
     window.location.href = DOWNLOAD_URL;
   };
   
