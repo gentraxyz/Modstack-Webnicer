@@ -83,28 +83,6 @@ function App() {
             <button className="btn-download" onClick={handleInstall}>
               Install Modstack App
             </button>
-
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              background: 'rgba(30, 48, 64, 0.5)',
-              border: '1px solid #2a3a55',
-              borderRadius: '8px',
-              padding: '10px 18px',
-            }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#86efac" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              <span style={{ fontSize: '15px', fontWeight: 600, color: '#86efac' }}>
-                {installCount !== null ? installCount.toLocaleString() : '—'}
-              </span>
-              <span style={{ fontSize: '13px', color: '#4a6080' }}>
-                Downloads
-              </span>
-            </div>
           </div>
 
           <div className="preview-card">
