@@ -2,14 +2,20 @@ import React from "react";
 import { Card, CardBody } from "@heroui/react";
 import previewImg from "../images/launcher-preview.png";
 import iconImg from "../images/placeholder.png";
+import { Download, Monitor } from "lucide-react";
 
-const DOWNLOAD_URL = "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack-setup.exe";
+const windowsUrl = "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack-setup.exe";
+const linuxUrl = `https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack-setup.AppImage`;
 
 function App() {
-  const handleInstall = () => {
-    window.location.href = DOWNLOAD_URL;
+  const handleInstallWindows = () => {
+    window.location.href = windowsUrl;
   };
-  
+
+  const handleInstallLinux = () => {
+    window.location.href = linuxUrl;
+  };
+
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#0f1923', color: '#e2e8f0', minHeight: '100vh', overflow: 'hidden' }}>
 
@@ -63,9 +69,53 @@ function App() {
           <p>Modstack is a unique launcher that lets you play your favorite mods and keep them up to date, all in one handy package.</p>
 
           <div className="hero-btns">
-            <button className="btn-download" onClick={handleInstall}>
-              Install Modstack App
-            </button>
+              <button
+                onClick={handleInstallWindows}
+                className="
+                  !rounded-[8px]
+                  px-8 py-4
+                  bg-[#16a355]
+                  text-white
+                  shadow-[0_6px_0_rgb(21,128,61)]
+                  hover:translate-y-[1px]
+                  hover:shadow-[0_4px_0_rgb(21,128,61)]
+                  active:translate-y-[4px]
+                  active:shadow-[0_1px_0_rgb(21,128,61)]
+                  active:scale-[0.98]
+                  transition-all
+                  duration-150
+                  flex items-center gap-3
+                  w-full sm:w-auto
+                "
+              >
+                <Monitor className="w-5 h-5" />
+                <span>Download for Windows</span>
+                <Download className="w-5 h-5" />
+              </button>
+
+              <button
+               // onClick={handleInstallLinux}
+                className="
+                  !rounded-[8px]
+                  px-8 py-4
+                  bg-[#16a355]
+                  text-white
+                  shadow-[0_6px_0_rgb(21,128,61)]
+                  hover:translate-y-[1px]
+                  hover:shadow-[0_4px_0_rgb(21,128,61)]
+                  active:translate-y-[4px]
+                  active:shadow-[0_1px_0_rgb(21,128,61)]
+                  active:scale-[0.98]
+                  transition-all
+                  duration-150
+                  flex items-center gap-3
+                  w-full sm:w-auto
+                "
+              >
+                <Monitor className="w-5 h-5" />
+                <span>Download for Linux (coming soon)</span>
+                <Download className="w-5 h-5" />
+              </button>
           </div>
 
           <div className="preview-card">
