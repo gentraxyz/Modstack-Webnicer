@@ -170,6 +170,34 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
           </p>
         </Section>
 
+        <Section title="9. Contact">
+          <p className="text-sm leading-relaxed text-white/70">
+            If you have any questions about this policy, you can contact us:
+          </p>
+          <ul className="mt-3 list-disc pl-5 text-sm text-white/70 space-y-1">
+            <li>
+              <span className="text-white/90 font-medium">Email:</span>{" "}
+              <a
+                href="mailto:modstacksupport@gmail.com"
+                className="text-green-500 hover:text-green-400 transition-colors"
+              >
+                modstacksupport@gmail.com
+              </a>
+            </li>
+            <li>
+              <span className="text-white/90 font-medium">Discord:</span>{" "}
+              <a
+                href="https://discord.gg/QmZpUCbn2N"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-500 hover:text-green-400 transition-colors"
+              >
+                discord.gg/QmZpUCbn2N
+              </a>
+            </li>
+          </ul>
+        </Section>
+
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/45">
           © 2026 Modstack. All rights reserved.
         </div>

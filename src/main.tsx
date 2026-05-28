@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './pages/home.tsx';
 import TermsPage from './pages/terms.tsx';
+import PrivPage from './pages/privacy.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

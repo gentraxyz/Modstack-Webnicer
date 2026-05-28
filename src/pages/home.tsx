@@ -187,11 +187,11 @@ function App() {
                   </svg>
                   @Modstack
                 </a>
-                <a href="https://twitter.com/primeisonline" target="_blank" rel="noopener noreferrer" style={socialLinkStyle}>
+                <a href="https://twitter.com/primeCigarrete" target="_blank" rel="noopener noreferrer" style={socialLinkStyle}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>
-                  @primeisonline
+                  @primeCigarrete
                 </a>
                 <a href="https://discord.gg/nxsDcYVa6s" target="_blank" rel="noopener noreferrer" style={socialLinkStyle}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -208,6 +208,7 @@ function App() {
               </span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <a href="/terms" style={legalLinkStyle}>Terms & Conditions</a>
+                <a href="/privacy" style={legalLinkStyle}>Privacy Policy</a>
               </div>
             </div>
           </div>
@@ -230,7 +231,7 @@ function App() {
             </span>
           
             <span style={{ fontSize: '12px', color: '#2e4060' }}>
-              Made with 💚 by @primeisonline
+              Made with 💚 by @primeCigarrete
               <br />
               support: @fitzxel & @gekoxd
             </span>
