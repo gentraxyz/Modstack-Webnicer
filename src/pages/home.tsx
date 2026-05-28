@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardBody } from "@heroui/react";
 import previewImg from "../images/launcher-preview.png";
 import iconImg from "../images/placeholder.png";
+import titleImg from "../images/modstack-title.png";
 import { Download, Monitor } from "lucide-react";
 
 const windowsUrl = "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack-setup.exe";
@@ -27,7 +28,11 @@ function App() {
               alt="logo" 
             />
           </div>
-          <span>Modstack</span>
+            <img 
+              src={titleImg}
+              alt="title" 
+              className="h-5 w-auto top-1 relative"
+            />
         </a>
 
         <div className="nav-center"></div>
