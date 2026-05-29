@@ -219,7 +219,7 @@ function App() {
           <div className="preview-card">
             <Card
               isPressable radius="sm"
-              className="!rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-green-600/40 will-change-transform"
+              className="!rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-green-600/40 will-change-transform !cursor-default"
               style={{ transformStyle: "preserve-3d", transition: "transform 0.06s linear" }}
             >
               <CardBody className="p-0">
