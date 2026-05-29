@@ -216,23 +216,17 @@ function App() {
           </div>
           {/* ── end download section ── */}
 
-<div className="preview-card">
-  <Card
-    isPressable 
-    radius="sm"
-    className="!rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-green-600/40 will-change-transform !cursor-default"
-    style={{ transformStyle: "preserve-3d", transition: "transform 0.06s linear" }}
-  >
-    <CardBody className="p-0">
-      <img 
-        src={previewImg} 
-        alt="Modstack Launcher Preview" 
-        className="w-full h-[400px] md:h-[515px] object-cover pointer-events-none select-none" 
-      />
-    </CardBody>
-  </Card>
-</div>
-
+          <div className="preview-card">
+            <Card
+              isPressable radius="sm"
+              className="!rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-green-600/40 will-change-transform !cursor-default"
+              style={{ transformStyle: "preserve-3d", transition: "transform 0.06s linear" }}
+            >
+              <CardBody className="p-0">
+                <img src={previewImg} alt="Modstack Launcher Preview" className="w-full h-[400px] md:h-[515px] object-cover pointer-events-none select-none" />
+              </CardBody>
+            </Card>
+          </div>
 
         </div>
       </div>
