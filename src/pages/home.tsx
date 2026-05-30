@@ -3,7 +3,17 @@ import { Card, CardBody } from "@heroui/react";
 import previewImg from "../images/launcher-preview.png";
 import iconImg from "../images/placeholder.png";
 import titleImg from "../images/modstack-title.png";
-import { Download, Monitor, ChevronDown } from "lucide-react";
+import {
+  Download,
+  Monitor,
+  ChevronDown,
+  Feather,
+  Server,
+  Boxes,
+  DownloadCloud,
+  Users,
+  Sliders
+} from "lucide-react";
 
 const windowsExeUrl   = "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack-setup.exe";
 const linuxAppImageUrl = "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack.AppImage";
@@ -88,6 +98,39 @@ const subTray: React.CSSProperties = {
   borderRadius: "0 0 8px 8px",
   padding: "8px",
 };
+
+const features = [
+  {
+    icon: Feather,
+    title: "Fast and Lightweight",
+    description: "ModStack takes almost no resources on your computer. ModStack is also about 20 times smaller than most other launchers",
+  },
+  {
+    icon: Server,
+    title: "Server Browser",
+    description: "Easily find Minecraft servers inside the launcher. No need to keep your browser open. We show smaller non P2W servers",
+  },
+  {
+    icon: Boxes,
+    title: "Bedrock and Java Support",
+    description: "Forget just having Java. Play on Bedrock edition too whenever you want",
+  },
+  {
+    icon: DownloadCloud,
+    title: "Easy Mod installation and imports",
+    description: "No need for any folder archeology. Just download or import your mods inside the launcher",
+  },
+  {
+    icon: Users,
+    title: "Account Switcher",
+    description: "Easily manage and instantly switch between multiple Microsoft and offline accounts.",
+  },
+  {
+    icon: Sliders,
+    title: "Sleek Customization",
+    description: "A beautiful, ad-free interface with clean layouts and advanced customization.",
+  },
+];
 
 function App() {
   const [expanded, setExpanded] = useState(false);
@@ -235,6 +278,43 @@ function App() {
                 <img src={previewImg} alt="Modstack Launcher Preview" className="w-full h-[400px] md:h-[515px] object-cover pointer-events-none select-none" />
               </CardBody>
             </Card>
+          </div>
+
+          {/* Features Section */}
+          <div className="mt-24 md:mt-32 max-w-6xl w-full px-4 mb-16 text-center">
+            <span className="text-[#1bd96a] font-bold tracking-wider uppercase text-xs sm:text-sm bg-[#1a3a28] px-3.5 py-1.5 rounded-full border border-green-500/25">
+              Features
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-white mt-5 mb-3 tracking-tight">
+              Built for every player
+            </h2>
+            <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-16 font-normal">
+              Choose a Minecraft launcher that actually puts the community first.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+              {features.map((feature, i) => {
+                const IconComponent = feature.icon;
+                return (
+                  <div
+                    key={i}
+                    className="p-6 md:p-8 rounded-xl border border-zinc-800/80 bg-zinc-900/20 backdrop-blur-sm hover:border-[#1bd96a]/40 hover:bg-zinc-900/40 transition-all duration-300 flex flex-col gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-[#1a3a28] border border-green-500/30 flex items-center justify-center text-[#1bd96a] group-hover:border-[#1bd96a]/50 transition-all duration-300">
+                      <IconComponent className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#1bd96a] transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
         </div>
