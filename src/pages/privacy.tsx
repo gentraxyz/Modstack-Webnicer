@@ -45,42 +45,46 @@ export default function PrivacyPage({ open = false, onClose }: PrivacyPageProps)
   if (!shouldRender) return null;
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-[#0f1923] text-white overflow-hidden">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (
           <div key={i} className="blob-dynamic" />
         ))}
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-900/10 via-transparent to-transparent" />
-      <div className="pointer-events-none absolute inset-0 bg-black/60" />
 
-      <header className="sticky top-0 z-20 border-b border-white/10 bg-black/55 backdrop-blur-md">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#0f1923]/80 backdrop-blur-md">
         <div className="mx-auto max-w-5xl px-5 md:px-8 py-4 flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-black tracking-tight">
               <span className="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
                 Privacy Policy
               </span>
               <span className="text-white"> for Modstack</span>
             </h1>
-            <div className="mt-1 text-sm text-white/45">
-              Last updated: May 2026
-            </div>
+
           </div>
           <Button
             variant="light"
             onPress={handleClose}
-            className="text-white/70 hover:text-white"
+            className="text-white/80 hover:text-white font-bold"
           >
             Go back
           </Button>
+
         </div>
+                  
       </header>
 
+
       <main className="relative z-10 mx-auto max-w-5xl px-5 md:px-8 py-8 md:py-12">
-        <p className="text-sm leading-relaxed text-white/70">
+        <img src="/images/placeholder.png" alt="Privacy Policy" className="size-32 mx-auto mb-5"  />
+                    <div className="mt-1 text-sm text-white/80 font-extrabold mx-auto w-fit mb-6">
+              Last updated: May 2026
+            </div>
+        <p className="text-sm leading-relaxed text-white/70 font-semibold">
           By using{" "}
-          <span className="text-green-500 font-semibold">Modstack</span>{" "}
+          <span className="text-green-500 font-extrabold">Modstack</span>{" "}
           and our services, you agree to the practices described in this policy.
           We recommend reading it carefully.
         </p>
@@ -88,7 +92,7 @@ export default function PrivacyPage({ open = false, onClose }: PrivacyPageProps)
         <Section title="1. Information We Collect">
           <p className="text-sm leading-relaxed text-white/70">
             Modstack{" "}
-            <span className="text-white/90 font-medium">
+            <span className="text-white/90 font-extrabold">
               does not collect, store, or process any personal data
             </span>{" "}
             from its users. We do not use telemetry, usage analytics, advertising,
@@ -104,14 +108,14 @@ export default function PrivacyPage({ open = false, onClose }: PrivacyPageProps)
           <ul className="mt-3 list-disc pl-5 text-sm text-white/70 space-y-1">
             <li>
               The login process happens{" "}
-              <span className="text-white/90 font-medium">
+              <span className="text-white/90 font-extrabold">
                 directly with Microsoft's servers
               </span>
               . Modstack never has access to your password.
             </li>
             <li>
               Your session token is stored{" "}
-              <span className="text-white/90 font-medium">
+              <span className="text-white/90 font-extrabold">
                 only on your local device
               </span>{" "}
               to keep you logged in. It is never sent to our own servers.
@@ -166,7 +170,7 @@ export default function PrivacyPage({ open = false, onClose }: PrivacyPageProps)
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-white/70 space-y-1">
             <li>
-              <span className="text-white/90 font-medium">Email:</span>{" "}
+              <span className="text-white/90 font-extrabold">Email:</span>{" "}
               <a
                 href="mailto:modstacksupport@gmail.com"
                 className="text-green-500 hover:text-green-400 transition-colors"
@@ -175,7 +179,7 @@ export default function PrivacyPage({ open = false, onClose }: PrivacyPageProps)
               </a>
             </li>
             <li>
-              <span className="text-white/90 font-medium">Discord:</span>{" "}
+              <span className="text-white/90 font-extrabold">Discord:</span>{" "}
               <a
                 href="https://discord.gg/QmZpUCbn2N"
                 target="_blank"
@@ -199,8 +203,8 @@ export default function PrivacyPage({ open = false, onClose }: PrivacyPageProps)
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-8">
-      <h2 className="text-base md:text-lg font-bold text-green-500">{title}</h2>
-      <div className="mt-2">{children}</div>
+      <h2 className="text-base md:text-lg font-extrabold text-green-500">{title}</h2>
+      <div className="mt-2 font-semibold">{children}</div>
     </section>
   );
 }
