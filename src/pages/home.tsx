@@ -130,7 +130,7 @@ function App() {
         </svg>
 
         <div className="hero-content">
-          <div className="badge">Beta Release v1.0.3</div>
+          <div className="badge">Beta Release v1.0.4</div>
           <h1>Download Modstack<br />for Windows</h1>
           <p>Modstack is a unique launcher that lets you play your favorite mods and keep them up to date, all in one handy package.</p>
 
