@@ -273,7 +273,7 @@ function App() {
 
           <div style={{ borderTop: '1px solid #1a2a3a' }} />
 
-          <div style={{ textAlign: 'center', marginBottom: '-8px', marginRight: '80%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '-8px', marginRight: '75%' }}>
             <span style={{ fontSize: '12px', color: '#4a6a8a' }}>
               Modstack is{' '}
               <a
