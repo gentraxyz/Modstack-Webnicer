@@ -283,7 +283,7 @@ function App() {
                 style={{ color: '#16a355', textDecoration: 'underline', textUnderlineOffset: '3px' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#22c55e'}
                 onMouseLeave={e => e.currentTarget.style.color = '#16a355'}
-              >open source</a>.
+              >Source-Available, not Open Source.</a>.
             </span>
           </div>
 
