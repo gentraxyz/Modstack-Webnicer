@@ -45,32 +45,28 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
   if (!shouldRender) return null;
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-[#0f1923] text-white overflow-hidden">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (
           <div key={i} className="blob-dynamic" />
         ))}
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-900/10 via-transparent to-transparent" />
-      <div className="pointer-events-none absolute inset-0 bg-black/60" />
 
-      <header className="sticky top-0 z-20 border-b border-white/10 bg-black/55 backdrop-blur-md">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#0f1923]/80 backdrop-blur-md">
         <div className="mx-auto max-w-5xl px-5 md:px-8 py-4 flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-black tracking-tight">
               <span className="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
                 Terms & Conditions
               </span>
               <span className="text-white"> of Modstack</span>
             </h1>
-            <div className="mt-1 text-sm text-white/45">
-              Last updated: May 2026
-            </div>
           </div>
           <Button
             variant="light"
             onPress={handleClose}
-            className="text-white/70 hover:text-white"
+            className="text-white/80 hover:text-white font-bold"
           >
             Go back
           </Button>
@@ -78,9 +74,13 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
       </header>
 
       <main className="relative z-10 mx-auto max-w-5xl px-5 md:px-8 py-8 md:py-12">
-        <p className="text-sm leading-relaxed text-white/70">
+        <img src="/images/placeholder.png" alt="Terms & Conditions" className="size-32 mx-auto mb-5"  />
+        <div className="mt-1 text-sm text-white/80 font-extrabold mx-auto w-fit mb-6">
+          Last updated: May 2026
+        </div>
+        <p className="text-sm leading-relaxed text-white/70 font-semibold">
           By downloading, installing, or using{" "}
-          <span className="text-green-500 font-semibold">Modstack</span>,
+          <span className="text-green-500 font-extrabold">Modstack</span>,
           you automatically agree to all the terms and conditions described in this document.
           If you disagree with any of them, you must uninstall the application immediately
           and refrain from using it.
@@ -111,7 +111,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
         <Section title="3. Disclaimer of Liability">
           <p className="text-sm leading-relaxed text-white/70">
             Modstack is provided{" "}
-            <span className="text-green-500 font-semibold">"as is"</span>, without warranties of any kind,
+            <span className="text-green-500 font-extrabold">"as is"</span>, without warranties of any kind,
             whether express or implied. The developers are not responsible for:
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-white/70 space-y-1">
@@ -164,7 +164,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
         <Section title="8. Acceptance of Terms">
           <p className="text-sm leading-relaxed text-white/70">
             Downloading, installing, or using{" "}
-            <span className="text-green-500 font-semibold">Modstack</span> constitutes full, voluntary,
+            <span className="text-green-500 font-extrabold">Modstack</span> constitutes full, voluntary,
             and unconditional acceptance of all the terms and conditions described herein. If you do not
             agree with any of them, you must refrain from using the Application.
           </p>
@@ -176,7 +176,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-white/70 space-y-1">
             <li>
-              <span className="text-white/90 font-medium">Email:</span>{" "}
+              <span className="text-white/90 font-extrabold">Email:</span>{" "}
               <a
                 href="mailto:modstacksupport@gmail.com"
                 className="text-green-500 hover:text-green-400 transition-colors"
@@ -185,7 +185,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
               </a>
             </li>
             <li>
-              <span className="text-white/90 font-medium">Discord:</span>{" "}
+              <span className="text-white/90 font-extrabold">Discord:</span>{" "}
               <a
                 href="https://discord.gg/QmZpUCbn2N"
                 target="_blank"
@@ -209,8 +209,8 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-8">
-      <h2 className="text-base md:text-lg font-bold text-green-500">{title}</h2>
-      <div className="mt-2">{children}</div>
+      <h2 className="text-base md:text-lg font-extrabold text-green-500">{title}</h2>
+      <div className="mt-2 font-semibold">{children}</div>
     </section>
   );
 }
