@@ -273,7 +273,7 @@ function App() {
 
           <div style={{ borderTop: '1px solid #1a2a3a' }} />
 
-          <div style={{ textAlign: 'center', marginBottom: '-8px', marginRight: '86%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '-8px', marginRight: '84%' }}>
             <span style={{ fontSize: '12px', color: '#4a6a8a' }}>
               Modstack is{' '}
               <a
@@ -283,7 +283,7 @@ function App() {
                 style={{ color: '#16a355', textDecoration: 'underline', textUnderlineOffset: '3px' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#22c55e'}
                 onMouseLeave={e => e.currentTarget.style.color = '#16a355'}
-              >Source-Available, not Open Source.</a>.
+              >Source-Available, not Open Source</a>.
             </span>
           </div>
 
