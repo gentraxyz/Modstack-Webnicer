@@ -149,7 +149,6 @@ function App() {
     <div
       style={{
         fontFamily: "'Inter', sans-serif",
-        backgroundColor: "#0f1923",
         color: "#e2e8f0",
         minHeight: "100vh",
         overflow: "hidden",
