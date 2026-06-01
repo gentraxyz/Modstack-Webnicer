@@ -267,7 +267,7 @@ function App() {
         </svg>
 
         <div className="hero-content">
-          <div className="badge">v1.0.6 STABLE</div>
+          <div className="badge">v1.0.7 STABLE</div>
           <h1>
             Download Modstack
             <br />
@@ -781,6 +781,9 @@ function App() {
                 </a>
                 <a href="/privacy" style={legalLinkStyle}>
                   Privacy Policy
+                </a>
+                                <a href="/about" style={legalLinkStyle}>
+                  About
                 </a>
               </div>
             </div>
