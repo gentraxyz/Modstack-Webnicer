@@ -782,6 +782,9 @@ function App() {
                 <a href="/privacy" style={legalLinkStyle}>
                   Privacy Policy
                 </a>
+                                <a href="/about" style={legalLinkStyle}>
+                  About
+                </a>
               </div>
             </div>
           </div>
