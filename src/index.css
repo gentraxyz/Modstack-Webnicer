@@ -26,12 +26,19 @@
   --badge-bg: #1e3a2a;
   --badge-text: #1bd96a;
 }
-body { background: #0f1923; }
+body {
+  background-color: #0f1923;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(27, 217, 106, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
+  background-size: auto, 32px 32px;
+  background-attachment: fixed;
+}
 .btn-signin { background: var(--green-btn); border: none; color: #000000; font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 700; padding: 7px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 7px; transition: 0.15s; }
 .btn-signin:hover { background: #22d46e; }
 .btn-icon { background: none; border: none; color: #64748b; cursor: pointer; padding: 7px; border-radius: 8px; display: flex; align-items: center; transition: 0.15s; }
 .btn-icon:hover { background: rgba(255, 255, 255, 0.06); color: var(--muted2); }
-.hero { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 72px 20px 0; background: var(--bg); }
+.hero { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 72px 20px 0; background: transparent; }
 .hero-bg { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 900px; height: 600px; pointer-events: none; z-index: 0; opacity: 0.18; }
 .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
 .badge { display: inline-flex; align-items: center; background: #1a3a28; border: 1px solid rgba(27, 217, 106, 0.35); color: var(--green); font-size: 12.5px; font-weight: 600; padding: 5px 16px; border-radius: 20px; margin-bottom: 26px; letter-spacing: 0.02em; }
