@@ -128,7 +128,10 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
               <Heart className="w-5 h-5" /> Our Mission
             </h2>
             <p className="text-sm md:text-base leading-relaxed text-white/70 font-semibold">
-              Insert description here
+              Modstack was built to be the best Minecraft launcher available. We
+              focused on providing a lightweight, high-performance launcher
+              without compromising on features and actually listening to our
+              users.
             </p>
           </section>
 
