@@ -80,24 +80,24 @@ const SubOption = ({ href, label }: SubOptionProps) => (
   </a>
 );
 
-const greenCard: React.CSSProperties = {
+const blueCard: React.CSSProperties = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   padding: "20px 12px 14px",
-  backgroundColor: "#16a355",
+  backgroundColor: "#1d7b9e",
   borderRadius: "8px 8px 6px 6px",
   color: "#ffffff",
   fontWeight: 600,
-  boxShadow: "0 6px 0 rgb(21,128,61)",
+  boxShadow: "0 6px 0 rgb(29,123,158)",
 };
 
 const subTray: React.CSSProperties = {
   display: "flex",
   flexDirection: "column",
   gap: "4px",
-  backgroundColor: "rgba(22,163,85,0.12)",
-  border: "1px solid rgba(22,163,85,0.25)",
+  backgroundColor: "rgba(37,150,190,0.12)",
+  border: "1px solid rgba(37,150,190,0.25)",
   borderTop: "none",
   borderRadius: "0 0 8px 8px",
   padding: "8px",
@@ -268,7 +268,7 @@ function App() {
 
         <div className="hero-content">
           <div className="badge">v1.0.7 STABLE</div>
-          <h1>
+          <h1 className="font-minecraft !font-normal !tracking-normal">
             Download Modstack
             <br />
             for Windows
@@ -291,7 +291,7 @@ function App() {
             <div className="hero-btns">
               <button
                 onClick={() => (window.location.href = windowsExeUrl)}
-                className="!rounded-[8px] px-8 py-4 bg-[#16a355] text-white shadow-[0_6px_0_rgb(21,128,61)] hover:translate-y-[1px] hover:shadow-[0_4px_0_rgb(21,128,61)] active:translate-y-[4px] active:shadow-[0_1px_0_rgb(21,128,61)] active:scale-[0.98] transition-all duration-150 flex items-center gap-3 w-full sm:w-auto"
+                className="!rounded-[8px] px-8 py-4 bg-[#2596be] text-white shadow-[0_6px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_4px_0_rgb(29,123,158)] active:translate-y-[4px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-3 w-full sm:w-auto"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -372,7 +372,7 @@ function App() {
               >
                 {/* Windows */}
                 <div>
-                  <div style={greenCard}>
+                  <div style={blueCard}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 640 640"
@@ -400,7 +400,7 @@ function App() {
 
                 {/* macOS */}
                 <div>
-                  <div style={greenCard}>
+                  <div style={blueCard}>
                     <AppleIcon />
                     <span
                       style={{
@@ -419,7 +419,7 @@ function App() {
 
                 {/* Linux */}
                 <div>
-                  <div style={greenCard}>
+                  <div style={blueCard}>
                     <LinuxIcon />
                     <span
                       style={{
@@ -446,7 +446,7 @@ function App() {
             <Card
               isPressable
               radius="sm"
-              className="!rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-green-600/40 will-change-transform !cursor-default"
+              className="!rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-[#2596be]/40 will-change-transform !cursor-default"
               style={{
                 transformStyle: "preserve-3d",
                 transition: "transform 0.06s linear",
@@ -464,10 +464,10 @@ function App() {
 
           {/* Features Section */}
           <div className="mt-24 md:mt-32 max-w-6xl w-full px-4 mb-16 text-center">
-            <span className="text-[#1bd96a] font-bold tracking-wider uppercase text-xs sm:text-sm bg-[#1a3a28] px-3.5 py-1.5 rounded-full border border-green-500/25">
+            <span className="text-[#2596be] font-bold tracking-wider uppercase text-xs sm:text-sm bg-[#103444] px-3.5 py-1.5 rounded-full border border-[#2596be]/25">
               Features
             </span>
-            <h2 className="text-3xl md:text-5xl font-black text-white mt-5 mb-3 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-normal text-white mt-5 mb-3 tracking-normal font-minecraft">
               Built for every player
             </h2>
             <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-16 font-normal">
@@ -481,13 +481,13 @@ function App() {
                 return (
                   <div
                     key={i}
-                    className="p-6 md:p-8 rounded-xl border border-zinc-800/80 bg-zinc-900/20 backdrop-blur-sm hover:border-[#1bd96a]/40 hover:bg-zinc-900/40 transition-all duration-300 flex flex-col gap-4 group"
+                    className="p-6 md:p-8 rounded-xl border border-zinc-800/80 bg-zinc-900/20 backdrop-blur-sm hover:border-[#2596be]/40 hover:bg-zinc-900/40 transition-all duration-300 flex flex-col gap-4 group"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-[#1a3a28] border border-green-500/30 flex items-center justify-center text-[#1bd96a] group-hover:border-[#1bd96a]/50 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-lg bg-[#103444] border border-[#2596be]/30 flex items-center justify-center text-[#2596be] group-hover:border-[#2596be]/50 transition-all duration-300">
                       <IconComponent className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#1bd96a] transition-colors duration-300">
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#2596be] transition-colors duration-300">
                         {feature.title}
                       </h3>
                       <p className="text-slate-400 text-sm leading-relaxed">
@@ -502,10 +502,10 @@ function App() {
 
           {/* Comparison Section */}
           <div className="mt-24 md:mt-32 max-w-5xl w-full px-4 mb-16 text-center mx-auto">
-            <span className="text-[#1bd96a] font-bold tracking-wider uppercase text-xs sm:text-sm bg-[#1a3a28] px-3.5 py-1.5 rounded-full border border-green-500/25">
+            <span className="text-[#2596be] font-bold tracking-wider uppercase text-xs sm:text-sm bg-[#103444] px-3.5 py-1.5 rounded-full border border-[#2596be]/25">
               Comparison
             </span>
-            <h2 className="text-3xl md:text-5xl font-black text-white mt-5 mb-3 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-normal text-white mt-5 mb-3 tracking-normal font-minecraft">
               Why Modstack?
             </h2>
             <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-normal">
@@ -588,7 +588,7 @@ function App() {
                       <td className="p-6 text-center">
                         <div className="flex justify-center">
                           {row.modstack ? (
-                            <Check className="w-6 h-6 text-[#1bd96a]" />
+                            <Check className="w-6 h-6 text-[#2596be]" />
                           ) : (
                             <X className="w-6 h-6 text-zinc-600" />
                           )}
@@ -782,7 +782,7 @@ function App() {
                 <a href="/privacy" style={legalLinkStyle}>
                   Privacy Policy
                 </a>
-                                <a href="/about" style={legalLinkStyle}>
+                <a href="/about" style={legalLinkStyle}>
                   About
                 </a>
               </div>
@@ -805,12 +805,12 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  color: "#16a355",
+                  color: "#1d7b9e",
                   textDecoration: "underline",
                   textUnderlineOffset: "3px",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#22c55e")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#16a355")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#2bb1e0")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#1d7b9e")}
               >
                 Source-Available, not Open Source
               </a>
@@ -843,7 +843,7 @@ function App() {
               WITH MOJANG OR MICROSOFT.
             </span>
             <span style={{ fontSize: "12px", color: "#2e4060" }}>
-              Made with 💚 by @primeCigarrete
+              Made with 💙 by @primeCigarrete
               <br />
               support: @fitzxel & @gekoxd
             </span>

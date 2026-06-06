@@ -14,39 +14,40 @@
   --win-bar: #0f1923;
   --border: #2a3a50;
   --border2: #1e2d42;
-  --green: #1bd96a;
-  --green-btn: #27c96e;
-  --green-dark: #16a355;
-  --green-bg: rgba(27,217,106,0.15);
+  --brand-blue: #2596be;
+  --brand-blue-btn: #2596be;
+  --brand-blue-dark: #1d7b9e;
+  --brand-blue-bg: rgba(37, 150, 190, 0.15);
   --text: #e2e8f0;
   --muted: #64748b;
   --muted2: #94a3b8;
   --white: #ffffff;
   --black: #000000;
-  --badge-bg: #1e3a2a;
-  --badge-text: #1bd96a;
+  --badge-bg: #103444;
+  --badge-text: #2596be;
+  --font-minecraft: 'Minecraft', 'Pixelify Sans', cursive;
 }
 body {
   background-color: #0f1923;
   background-image:
-    radial-gradient(circle at 50% 0%, rgba(27, 217, 106, 0.07) 0%, transparent 55%),
+    radial-gradient(circle at 50% 0%, rgba(37, 150, 190, 0.07) 0%, transparent 55%),
     radial-gradient(ellipse at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
   background-size: auto, 32px 32px;
   background-attachment: fixed;
 }
-.btn-signin { background: var(--green-btn); border: none; color: #000000; font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 700; padding: 7px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 7px; transition: 0.15s; }
-.btn-signin:hover { background: #22d46e; }
+.btn-signin { background: var(--brand-blue-btn); border: none; color: #000000; font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 700; padding: 7px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 7px; transition: 0.15s; }
+.btn-signin:hover { background: #2bb1e0; }
 .btn-icon { background: none; border: none; color: #64748b; cursor: pointer; padding: 7px; border-radius: 8px; display: flex; align-items: center; transition: 0.15s; }
 .btn-icon:hover { background: rgba(255, 255, 255, 0.06); color: var(--muted2); }
 .hero { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 72px 20px 0; background: transparent; }
 .hero-bg { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 900px; height: 600px; pointer-events: none; z-index: 0; opacity: 0.18; }
 .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
-.badge { display: inline-flex; align-items: center; background: #1a3a28; border: 1px solid rgba(27, 217, 106, 0.35); color: var(--green); font-size: 12.5px; font-weight: 600; padding: 5px 16px; border-radius: 20px; margin-bottom: 26px; letter-spacing: 0.02em; }
+.badge { display: inline-flex; align-items: center; background: var(--badge-bg); border: 1px solid rgba(37, 150, 190, 0.35); color: var(--brand-blue); font-size: 12.5px; font-weight: 600; padding: 5px 16px; border-radius: 20px; margin-bottom: 26px; letter-spacing: 0.02em; }
 .hero h1 { font-size: clamp(44px, 7vw, 80px); font-weight: 900; line-height: 1.07; color: var(--white); max-width: 820px; margin-bottom: 20px; letter-spacing: -0.03em; }
 .hero p { color: #7a92a8; font-size: 16.5px; font-weight: 400; max-width: 600px; line-height: 1.65; margin-bottom: 36px; }
 .hero-btns { display: flex; gap: 12px; margin-bottom: 56px; justify-content: center; flex-wrap: wrap; }
-.btn-download { background: var(--green-btn); border: none; color: #fff; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; padding: 13px 24px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 9px; transition: 0.15s; }
-.btn-download:hover { background: #22d46e; transform: translateY(-1px); }
+.btn-download { background: var(--brand-blue-btn); border: none; color: #fff; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; padding: 13px 24px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 9px; transition: 0.15s; }
+.btn-download:hover { background: #2bb1e0; transform: translateY(-1px); }
 .win4 { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2.5px; width: 16px; height: 16px; }
 .win4 span { background: #fff; border-radius: 1px; display: block; }
 .btn-moreopt { background: #1e2d3d; border: 1px solid #2d4060; color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; padding: 13px 24px; border-radius: 10px; cursor: pointer; transition: 0.15s; }
