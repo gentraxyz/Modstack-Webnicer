@@ -53,7 +53,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
           <div key={i} className="blob-dynamic" />
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-900/10 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#2596be]/10 via-transparent to-transparent" />
 
       <header className="sticky top-0 z-20 backdrop-blur-md">
         <div className="mx-auto max-w-5xl px-5 md:px-8 py-4 flex items-start justify-between gap-4">
@@ -71,7 +71,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
           isIconOnly
             variant="bordered"
             onPress={() => setTimeout(handleClose, 300)}
-            className="!rounded-[8px] px-5 py-2 bg-green-500 text-white shadow-[0_4px_0_rgb(22,163,74)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(22,163,74)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(22,163,74)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-full sm:w-auto font-medium ml-auto"
+            className="!rounded-[8px] px-5 py-2 bg-[#2596be] text-white shadow-[0_4px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(29,123,158)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-full sm:w-auto font-medium ml-auto"
             
           >
             <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff"><path d="M21 12L3 12M3 12L11.5 3.5M3 12L11.5 20.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -85,7 +85,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
         <img src="/images/placeholder.png" alt="Terms & Conditions" className="size-32 mx-auto mb-5"  />
                   <div>
             <h1 className="text-2xl md:text-3xl font-black tracking-tight mx-auto w-fit">
-              <span className="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-400 to-[#2596be] bg-clip-text text-transparent">
                 Terms & Conditions
               </span>
               <span className="text-white"> of Modstack</span>
@@ -97,7 +97,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
         </div>
         <p className="text-sm leading-relaxed text-white/70 font-semibold">
           By downloading, installing, or using{" "}
-          <span className="text-green-500 font-extrabold">Modstack</span>,
+          <span className="text-[#2596be] font-extrabold">Modstack</span>,
           you automatically agree to all the terms and conditions described in this document.
           If you disagree with any of them, you must uninstall the application immediately
           and refrain from using it.
@@ -128,7 +128,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
         <Section title="3. Disclaimer of Liability">
           <p className="text-sm leading-relaxed text-white/70">
             Modstack is provided{" "}
-            <span className="text-green-500 font-extrabold">"as is"</span>, without warranties of any kind,
+            <span className="text-[#2596be] font-extrabold">"as is"</span>, without warranties of any kind,
             whether express or implied. The developers are not responsible for:
           </p>
           <ul className="mt-3 list-disc pl-5 text-sm text-white/70 space-y-1">
@@ -181,7 +181,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
         <Section title="8. Acceptance of Terms">
           <p className="text-sm leading-relaxed text-white/70">
             Downloading, installing, or using{" "}
-            <span className="text-green-500 font-extrabold">Modstack</span> constitutes full, voluntary,
+            <span className="text-[#2596be] font-extrabold">Modstack</span> constitutes full, voluntary,
             and unconditional acceptance of all the terms and conditions described herein. If you do not
             agree with any of them, you must refrain from using the Application.
           </p>
@@ -196,7 +196,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
               <span className="text-white/90 font-extrabold">Email:</span>{" "}
               <a
                 href="mailto:modstacksupport@gmail.com"
-                className="text-green-500 hover:text-green-400 transition-colors"
+                className="text-[#2596be] hover:text-sky-400 transition-colors"
               >
                 modstacksupport@gmail.com
               </a>
@@ -207,7 +207,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
                 href="https://discord.gg/QmZpUCbn2N"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-500 hover:text-green-400 transition-colors"
+                className="text-[#2596be] hover:text-sky-400 transition-colors"
               >
                 discord.gg/QmZpUCbn2N
               </a>
@@ -226,7 +226,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-8">
-      <h2 className="text-base md:text-lg font-extrabold text-green-500">{title}</h2>
+      <h2 className="text-base md:text-lg font-extrabold text-[#2596be]">{title}</h2>
       <div className="mt-2 font-semibold">{children}</div>
     </section>
   );

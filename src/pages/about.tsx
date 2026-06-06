@@ -62,7 +62,7 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
           <div key={i} className="blob-dynamic" />
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-900/10 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#2596be]/10 via-transparent to-transparent" />
 
       <header className="sticky top-0 z-20 backdrop-blur-md">
         <div className="mx-auto max-w-5xl px-5 md:px-8 py-4 flex items-start justify-between gap-4">
@@ -80,7 +80,7 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
             isIconOnly
             variant="bordered"
             onPress={() => setTimeout(handleClose, 300)}
-            className="!rounded-[8px] px-5 py-2 bg-green-500 text-white shadow-[0_4px_0_rgb(22,163,74)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(22,163,74)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(22,163,74)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-full sm:w-auto font-medium ml-auto"
+            className="!rounded-[8px] px-5 py-2 bg-[#2596be] text-white shadow-[0_4px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(29,123,158)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-full sm:w-auto font-medium ml-auto"
           >
             <svg
               width="24px"
@@ -112,19 +112,19 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
         />
         <div>
           <h1 className="text-2xl md:text-3xl font-black tracking-tight mx-auto w-fit">
-            <span className="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 to-[#2596be] bg-clip-text text-transparent">
               About
             </span>
             <span className="text-white"> Modstack</span>
           </h1>
         </div>
-        <div className="mt-2 text-sm text-green-400 font-extrabold mx-auto w-fit mb-8 tracking-wider uppercase">
+        <div className="mt-2 text-sm text-sky-400 font-extrabold mx-auto w-fit mb-8 tracking-wider uppercase">
           The Absolute BEST Minecraft Launcher
         </div>
 
         <div className="space-y-10">
           <section className="bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6 md:p-8 backdrop-blur-sm">
-            <h2 className="text-lg md:text-xl font-black text-green-500 mb-4 flex items-center gap-2">
+            <h2 className="text-lg md:text-xl font-black text-[#2596be] mb-4 flex items-center gap-2">
               <Heart className="w-5 h-5" /> Our Mission
             </h2>
             <p className="text-sm md:text-base leading-relaxed text-white/70 font-semibold">
@@ -136,7 +136,7 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
           </section>
 
           <div>
-            <h2 className="text-lg md:text-xl font-black text-green-500 mb-6 text-center">
+            <h2 className="text-lg md:text-xl font-black text-[#2596be] mb-6 text-center">
               Key Features & Core Pillars
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -164,7 +164,7 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
           </div>
 
           <section className="bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6 md:p-8 backdrop-blur-sm">
-            <h2 className="text-lg md:text-xl font-black text-green-500 mb-4 flex items-center gap-2">
+            <h2 className="text-lg md:text-xl font-black text-[#2596be] mb-4 flex items-center gap-2">
               <Code className="w-5 h-5" /> Transparency & Trust
             </h2>
             <p className="text-sm leading-relaxed text-white/70">
@@ -175,7 +175,7 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
                 href="https://github.com/Modstack-Launcher/ModstackApp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-500 hover:underline"
+                className="text-[#2596be] hover:underline"
               >
                 GitHub Repository
               </a>
@@ -186,7 +186,7 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
           </section>
 
           <section className="bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6 md:p-8 backdrop-blur-sm">
-            <h2 className="text-lg md:text-xl font-black text-green-500 mb-4 flex items-center gap-2">
+            <h2 className="text-lg md:text-xl font-black text-[#2596be] mb-4 flex items-center gap-2">
               <Users className="w-5 h-5" /> The Team
             </h2>
             <p className="text-sm leading-relaxed text-white/70 mb-4">
@@ -245,12 +245,12 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-900/20 backdrop-blur-sm hover:border-[#1bd96a]/40 hover:bg-zinc-900/40 transition-all duration-300 flex gap-4 group">
-      <div className="w-12 h-12 shrink-0 rounded-lg bg-[#1a3a28] border border-green-500/30 flex items-center justify-center text-[#1bd96a] group-hover:border-[#1bd96a]/50 transition-all duration-300">
+    <div className="p-6 rounded-xl border border-zinc-800/80 bg-zinc-900/20 backdrop-blur-sm hover:border-[#2596be]/40 hover:bg-zinc-900/40 transition-all duration-300 flex gap-4 group">
+      <div className="w-12 h-12 shrink-0 rounded-lg bg-[#103444] border border-[#2596be]/30 flex items-center justify-center text-[#2596be] group-hover:border-[#2596be]/50 transition-all duration-300">
         <IconComponent className="w-6 h-6" />
       </div>
       <div>
-        <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-[#1bd96a] transition-colors duration-300">
+        <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-[#2596be] transition-colors duration-300">
           {title}
         </h3>
         <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
