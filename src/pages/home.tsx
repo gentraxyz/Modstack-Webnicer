@@ -267,7 +267,7 @@ function App() {
         </svg>
 
         <div className="hero-content">
-          <div className="badge">v1.0.7 STABLE</div>
+          <div className="badge">v1.0.8 STABLE</div>
           <h1 className="font-minecraft !font-normal !tracking-normal">
             Download Modstack
             <br />
