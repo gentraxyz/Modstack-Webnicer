@@ -71,7 +71,7 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
           isIconOnly
             variant="bordered"
             onPress={() => setTimeout(handleClose, 300)}
-            className="!rounded-[8px] px-5 py-2 bg-[#2596be] text-white shadow-[0_4px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(29,123,158)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-full sm:w-auto font-medium ml-auto"
+            className="!rounded-[8px] px-5 py-2 bg-[#2596be] text-white shadow-[0_4px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(29,123,158)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-auto font-medium ml-auto"
             
           >
             <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff"><path d="M21 12L3 12M3 12L11.5 3.5M3 12L11.5 20.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>

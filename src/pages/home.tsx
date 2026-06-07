@@ -151,7 +151,7 @@ function App() {
         fontFamily: "'Inter', sans-serif",
         color: "#e2e8f0",
         minHeight: "100vh",
-        overflow: "hidden",
+        overflowX: "hidden",
       }}
     >
       <nav>
@@ -171,7 +171,7 @@ function App() {
             href="https://discord.gg/nxsDcYVa6s"
             target="_blank"
             rel="noopener noreferrer"
-            className="!rounded-[8px] px-5 py-2 bg-[#5865F2] text-white shadow-[0_4px_0_rgb(71,82,196)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(71,82,196)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(71,82,196)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-full sm:w-auto font-medium"
+            className="!rounded-[8px] px-5 py-2 bg-[#5865F2] text-white shadow-[0_4px_0_rgb(71,82,196)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(71,82,196)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(71,82,196)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-auto font-medium"
           >
             <DiscordIcon size={18} />
             <span>Join Discord</span>
@@ -356,17 +356,15 @@ function App() {
                 width: "100%",
                 maxWidth: "580px",
                 overflow: "hidden",
-                maxHeight: expanded ? "400px" : "0px",
+                maxHeight: expanded ? "750px" : "0px",
                 opacity: expanded ? 1 : 0,
                 transition:
                   "max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease",
               }}
             >
               <div
+                className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full"
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr 1fr",
-                  gap: "12px",
                   padding: "4px 2px 8px",
                 }}
               >
@@ -442,11 +440,11 @@ function App() {
           </div>
           {/* ── end download section ── */}
 
-          <div className="preview-card">
+          <div className="preview-card w-full max-w-4xl px-4">
             <Card
               isPressable
               radius="sm"
-              className="!rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-[#2596be]/40 will-change-transform !cursor-default"
+              className="w-full !rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-[#2596be]/40 will-change-transform !cursor-default"
               style={{
                 transformStyle: "preserve-3d",
                 transition: "transform 0.06s linear",
@@ -792,10 +790,9 @@ function App() {
           <div style={{ borderTop: "1px solid #1a2a3a" }} />
 
           <div
+            className="text-center sm:text-left"
             style={{
-              textAlign: "center",
               marginBottom: "-8px",
-              marginRight: "75%",
             }}
           >
             <span style={{ fontSize: "12px", color: "#4a6a8a" }}>
@@ -819,15 +816,12 @@ function App() {
           </div>
 
           <div
+            className="flex flex-col sm:flex-row items-center justify-between gap-6 text-center"
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: "8px",
+              width: "100%",
             }}
           >
-            <span style={{ fontSize: "12px", color: "#2e4060" }}>
+            <span className="text-center sm:text-left" style={{ fontSize: "12px", color: "#2e4060" }}>
               © 2026 Modstack. All rights reserved.
             </span>
             <span
@@ -842,7 +836,7 @@ function App() {
               NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED
               WITH MOJANG OR MICROSOFT.
             </span>
-            <span style={{ fontSize: "12px", color: "#2e4060" }}>
+            <span className="text-center sm:text-right" style={{ fontSize: "12px", color: "#2e4060" }}>
               Made with 💙 by @primeCigarrete
               <br />
               support: @fitzxel & @gekoxd

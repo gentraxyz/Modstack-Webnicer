@@ -80,7 +80,7 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
             isIconOnly
             variant="bordered"
             onPress={() => setTimeout(handleClose, 300)}
-            className="!rounded-[8px] px-5 py-2 bg-[#2596be] text-white shadow-[0_4px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(29,123,158)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-full sm:w-auto font-medium ml-auto"
+            className="!rounded-[8px] px-5 py-2 bg-[#2596be] text-white shadow-[0_4px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(29,123,158)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-auto font-medium ml-auto"
           >
             <svg
               width="24px"
@@ -209,18 +209,18 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
             </ul>
 
             <div className="mt-6 bg-gray-800 border border-gray-900 rounded-xl p-6 w-full max-w-2xl">
-              <div className="font-bold text-4xl mb-6">App Contributors:</div>
+              <div className="font-bold text-2xl md:text-3xl mb-4">App Contributors:</div>
               <a href="https://github.com/Modstack-Launcher/ModstackApp/graphs/contributors">
-                <img src="https://contrib.rocks/image?repo=Modstack-Launcher/ModstackApp" />
+                <img src="https://contrib.rocks/image?repo=Modstack-Launcher/ModstackApp" className="max-w-full h-auto rounded-lg" alt="App Contributors" />
               </a>
             </div>
 
             <div className="mt-6 bg-gray-800 border border-gray-900 rounded-xl p-6 w-full max-w-2xl">
-              <div className="font-bold text-4xl mb-6">
+              <div className="font-bold text-2xl md:text-3xl mb-4">
                 Website Contributors:
               </div>
               <a href="https://github.com/Modstack-Launcher/ModstackWeb/graphs/contributors">
-                <img src="https://contrib.rocks/image?repo=Modstack-Launcher/ModstackWeb" />
+                <img src="https://contrib.rocks/image?repo=Modstack-Launcher/ModstackWeb" className="max-w-full h-auto rounded-lg" alt="Website Contributors" />
               </a>
             </div>
           </section>
