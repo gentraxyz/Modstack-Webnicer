@@ -14,6 +14,9 @@ import {
   Sliders,
   Check,
   X,
+  Sword,
+  Compass,
+  Wrench,
 } from "lucide-react";
 
 const windowsExeUrl =
@@ -142,6 +145,30 @@ const features = [
   },
 ];
 
+const modpacks = [
+  {
+    icon: Compass,
+    title: "Explorers Odyssey",
+    description:
+      "Embark on an epic journey across custom biomes, stunning dimensions, and challenging dungeons.",
+    url: "https://www.curseforge.com/minecraft/modpacks/explorers-odyssey",
+  },
+  {
+    icon: Sword,
+    title: "RLCraft",
+    description:
+      "An action RPG fantasy modpack focused on pure survival, exploration, and immersive realism.",
+    url: "https://www.curseforge.com/minecraft/modpacks/rlcraft",
+  },
+  {
+    icon: Wrench,
+    title: "All the Mods 9",
+    description:
+      "A massive kitchen-sink modpack featuring a huge variety of modern tech, magic, and adventure mods.",
+    url: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-9",
+  },
+];
+
 function App() {
   const [expanded, setExpanded] = useState(false);
 
@@ -151,7 +178,7 @@ function App() {
         fontFamily: "'Inter', sans-serif",
         color: "#e2e8f0",
         minHeight: "100vh",
-        overflow: "hidden",
+        overflowX: "hidden",
       }}
     >
       <nav>
@@ -171,7 +198,7 @@ function App() {
             href="https://discord.gg/nxsDcYVa6s"
             target="_blank"
             rel="noopener noreferrer"
-            className="!rounded-[8px] px-5 py-2 bg-[#5865F2] text-white shadow-[0_4px_0_rgb(71,82,196)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(71,82,196)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(71,82,196)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-full sm:w-auto font-medium"
+            className="!rounded-[8px] px-5 py-2 bg-[#5865F2] text-white shadow-[0_4px_0_rgb(71,82,196)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(71,82,196)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(71,82,196)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-auto font-medium"
           >
             <DiscordIcon size={18} />
             <span>Join Discord</span>
@@ -356,17 +383,15 @@ function App() {
                 width: "100%",
                 maxWidth: "580px",
                 overflow: "hidden",
-                maxHeight: expanded ? "400px" : "0px",
+                maxHeight: expanded ? "750px" : "0px",
                 opacity: expanded ? 1 : 0,
                 transition:
                   "max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease",
               }}
             >
               <div
+                className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full"
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr 1fr",
-                  gap: "12px",
                   padding: "4px 2px 8px",
                 }}
               >
@@ -442,11 +467,11 @@ function App() {
           </div>
           {/* ── end download section ── */}
 
-          <div className="preview-card">
+          <div className="preview-card w-full max-w-4xl px-4">
             <Card
               isPressable
               radius="sm"
-              className="!rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-[#2596be]/40 will-change-transform !cursor-default"
+              className="w-full !rounded-[8px] overflow-hidden border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm hover:border-[#2596be]/40 will-change-transform !cursor-default"
               style={{
                 transformStyle: "preserve-3d",
                 transition: "transform 0.06s linear",
@@ -470,10 +495,10 @@ function App() {
             <h2 className="text-3xl md:text-5xl font-normal text-white mt-5 mb-3 tracking-normal font-minecraft">
               Built for every player
             </h2>
-            <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-16 font-normal">
+            <div className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-16 font-normal">
               Choose a Minecraft launcher that actually puts the community
               first.
-            </p>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
               {features.map((feature, i) => {
@@ -490,9 +515,9 @@ function App() {
                       <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#2596be] transition-colors duration-300">
                         {feature.title}
                       </h3>
-                      <p className="text-slate-400 text-sm leading-relaxed">
+                      <div className="text-slate-400 text-sm leading-relaxed">
                         {feature.description}
-                      </p>
+                      </div>
                     </div>
                   </div>
                 );
@@ -508,9 +533,9 @@ function App() {
             <h2 className="text-3xl md:text-5xl font-normal text-white mt-5 mb-3 tracking-normal font-minecraft">
               Why Modstack?
             </h2>
-            <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-normal">
+            <div className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-12 font-normal">
               See how we stack up against other popular launchers.
-            </p>
+            </div>
 
             <div className="overflow-x-auto rounded-2xl border border-zinc-800/50 bg-zinc-900/20 backdrop-blur-md">
               <table className="w-full text-left border-collapse">
@@ -625,6 +650,50 @@ function App() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* Featured Modpacks Section */}
+          <div className="mt-24 md:mt-32 max-w-6xl w-full px-4 mb-16 text-center">
+            <span className="text-[#2596be] font-bold tracking-wider uppercase text-xs sm:text-sm bg-[#103444] px-3.5 py-1.5 rounded-full border border-[#2596be]/25">
+              Featured Modpacks
+            </span>
+            <h2 className="text-3xl md:text-5xl font-normal text-white mt-5 mb-3 tracking-normal font-minecraft">
+              The Best Modpacks to try
+            </h2>
+            <div className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-16 font-normal">
+              The best modpacks to try using Modstack
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+              {modpacks.map((modpack, i) => {
+                const IconComponent = modpack.icon;
+                return (
+                  <a
+                    key={i}
+                    href={modpack.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-6 md:p-8 rounded-xl border border-zinc-800/80 bg-zinc-900/20 backdrop-blur-sm hover:border-[#2596be]/40 hover:bg-zinc-900/40 transition-all duration-300 flex flex-col gap-4 group cursor-pointer no-underline"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-[#103444] border border-[#2596be]/30 flex items-center justify-center text-[#2596be] group-hover:border-[#2596be]/50 transition-all duration-300">
+                      <IconComponent className="w-6 h-6" />
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#2596be] transition-colors duration-300">
+                        {modpack.title}
+                      </h3>
+                      <div className="text-slate-400 text-sm leading-relaxed">
+                        {modpack.description}
+                      </div>
+                    </div>
+                    <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-[#2596be] group-hover:text-sky-400 transition-colors duration-300">
+                      <span>View Modpack</span>
+                      <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -792,10 +861,9 @@ function App() {
           <div style={{ borderTop: "1px solid #1a2a3a" }} />
 
           <div
+            className="text-center sm:text-left"
             style={{
-              textAlign: "center",
               marginBottom: "-8px",
-              marginRight: "75%",
             }}
           >
             <span style={{ fontSize: "12px", color: "#4a6a8a" }}>
@@ -819,15 +887,12 @@ function App() {
           </div>
 
           <div
+            className="flex flex-col sm:flex-row items-center justify-between gap-6 text-center"
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: "8px",
+              width: "100%",
             }}
           >
-            <span style={{ fontSize: "12px", color: "#2e4060" }}>
+            <span className="text-center sm:text-left" style={{ fontSize: "12px", color: "#2e4060" }}>
               © 2026 Modstack. All rights reserved.
             </span>
             <span
@@ -842,7 +907,7 @@ function App() {
               NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED
               WITH MOJANG OR MICROSOFT.
             </span>
-            <span style={{ fontSize: "12px", color: "#2e4060" }}>
+            <span className="text-center sm:text-right" style={{ fontSize: "12px", color: "#2e4060" }}>
               Made with 💙 by @primeCigarrete
               <br />
               support: @fitzxel & @gekoxd
