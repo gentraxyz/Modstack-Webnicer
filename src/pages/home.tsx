@@ -116,8 +116,29 @@ const features = [
   {
     icon: Server,
     title: "Server Browser",
-    description:
-      "Easily find Minecraft servers inside the launcher. No need to keep your browser open. We show smaller non P2W servers",
+    description: (
+      <>
+        Easily find Minecraft servers inside the launcher. No need to keep your
+        browser open. We show smaller non P2W servers using{" "}
+        <a
+          href="https://anyserver.pro"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#2596be] hover:underline"
+        >
+          AnyServer.pro
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://modrinth.com"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          className="text-[#2596be] hover:underline"
+        >
+          Modrinth.com
+        </a>
+      </>
+    ),
   },
   {
     icon: Boxes,
