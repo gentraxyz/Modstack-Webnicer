@@ -5,7 +5,7 @@ import App from './pages/home.tsx';
 import TermsPage from './pages/terms.tsx';
 import PrivPage from './pages/privacy.tsx';
 import AboutPage from './pages/about.tsx';
-import NewsPage from './pages/news.tsx';
+import ChangePage from './pages/changelog.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/news" element={<NewsPage />} />
+        <Route path="/changelog" element={<ChangePage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

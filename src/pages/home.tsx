@@ -529,7 +529,7 @@ function App() {
           {latestNews && (
             <div className="mt-12 w-full max-w-4xl px-4">
               <a
-                href="/news"
+                href="/changelog"
                 className="group flex flex-col md:flex-row items-stretch bg-zinc-900/20 backdrop-blur-sm border border-zinc-800/80 hover:border-[#2596be]/45 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#2596be]/5 text-left"
               >
                 {/* News Image */}
@@ -938,8 +938,8 @@ function App() {
               <div
                 style={{ display: "flex", flexDirection: "column", gap: "8px" }}
               >
-                <a href="/news" style={legalLinkStyle}>
-                  News
+                <a href="/changelog" style={legalLinkStyle}>
+                  Change Log
                 </a>
                 <a href="/terms" style={legalLinkStyle}>
                   Terms & Conditions
