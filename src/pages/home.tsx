@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardBody } from "@heroui/react";
 import previewImg from "../images/launcher-preview.png";
 import iconImg from "../images/placeholder.png";
@@ -192,6 +192,23 @@ const modpacks = [
 
 function App() {
   const [expanded, setExpanded] = useState(false);
+  const [latestNews, setLatestNews] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/api/news")
+      .then((res) => res.json())
+      .then((data) => {
+        const published = data.filter((item: any) => item.published);
+        if (published.length > 0) {
+          published.sort(
+            (a: any, b: any) =>
+              new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
+          setLatestNews(published[0]);
+        }
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <div
@@ -507,6 +524,61 @@ function App() {
               </CardBody>
             </Card>
           </div>
+
+          {/* Latest News Highlights */}
+          {latestNews && (
+            <div className="mt-12 w-full max-w-4xl px-4">
+              <a
+                href="/news"
+                className="group flex flex-col md:flex-row items-stretch bg-zinc-900/20 backdrop-blur-sm border border-zinc-800/80 hover:border-[#2596be]/45 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#2596be]/5 text-left"
+              >
+                {/* News Image */}
+                <div className="relative md:w-2/5 min-h-[160px] md:min-h-0 overflow-hidden bg-zinc-950/60 border-b md:border-b-0 md:border-r border-zinc-800/50 flex items-center justify-center">
+                  <img
+                    src={latestNews.image}
+                    alt={latestNews.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    }}
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[9px] font-bold bg-[#2596be] text-black px-2.5 py-0.5 rounded tracking-wider uppercase">
+                      Latest Update
+                    </span>
+                  </div>
+                </div>
+
+                {/* News Content */}
+                <div className="flex-1 p-6 flex flex-col justify-between gap-3">
+                  <div>
+                    <span className="text-[10px] font-bold text-[#2596be] tracking-wider uppercase">
+                      What's New
+                    </span>
+                    <h3 className="text-lg font-bold text-white mt-1 mb-2 line-clamp-2">
+                      {latestNews.title}
+                    </h3>
+                    <p className="text-slate-400 text-xs md:text-sm line-clamp-2 leading-relaxed">
+                      {latestNews.content}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2.5 border-t border-zinc-800/40 mt-2">
+                    <span className="text-zinc-500 text-[10px] font-semibold uppercase tracking-wider">
+                      {new Date(latestNews.createdAt).toLocaleDateString("en", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <span className="text-[#2596be] text-xs font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform duration-200">
+                      Read Changelog →
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          )}
 
           {/* Features Section */}
           <div className="mt-24 md:mt-32 max-w-6xl w-full px-4 mb-16 text-center">
@@ -866,6 +938,9 @@ function App() {
               <div
                 style={{ display: "flex", flexDirection: "column", gap: "8px" }}
               >
+                <a href="/news" style={legalLinkStyle}>
+                  News
+                </a>
                 <a href="/terms" style={legalLinkStyle}>
                   Terms & Conditions
                 </a>
