@@ -6,7 +6,14 @@ import TermsPage from './pages/terms.tsx';
 import PrivPage from './pages/privacy.tsx';
 import AboutPage from './pages/about.tsx';
 import ChangePage from './pages/changelog.tsx';
+import SignupPage from './pages/signup.tsx';
+import LoginPage from './pages/login.tsx';
 import './index.css';
+import { initSession, handleAuthRedirect } from './auth';
+
+// Handle OAuth redirects and restore session on every page load
+handleAuthRedirect();
+initSession();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -17,6 +24,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/privacy" element={<PrivPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/changelog" element={<ChangePage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
