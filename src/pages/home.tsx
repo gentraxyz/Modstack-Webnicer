@@ -333,7 +333,7 @@ function App() {
         </svg>
 
         <div className="hero-content">
-          <div className="badge">v1.0.8 STABLE</div>
+          <div className="badge">v1.1.0 STABLE</div>
           <h1 className="font-minecraft !font-normal !tracking-normal">
             Download Modstack
             <br />
@@ -686,18 +686,18 @@ function App() {
                       curseforge: false,
                     },
                     {
-                      name: "One-Click Mod Install",
+                      name: "Music",
                       modstack: true,
-                      prism: true,
-                      modrinth: true,
-                      curseforge: true,
+                      prism: false,
+                      modrinth: false,
+                      curseforge: false,
                     },
                     {
-                      name: "Multi-Account Switcher",
+                      name: "Online chat with friends",
                       modstack: true,
-                      prism: true,
-                      modrinth: true,
-                      curseforge: true,
+                      prism: false,
+                      modrinth: false,
+                      curseforge: false,
                     },
                   ].map((row, i) => (
                     <tr key={i} className="hover:bg-white/5 transition-colors">
