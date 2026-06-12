@@ -8,6 +8,7 @@ import AboutPage from './pages/about.tsx';
 import ChangePage from './pages/changelog.tsx';
 import SignupPage from './pages/signup.tsx';
 import LoginPage from './pages/login.tsx';
+import WorkshopPage from './pages/workshop.tsx';
 import './index.css';
 import { initSession, handleAuthRedirect } from './auth';
 
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/changelog" element={<ChangePage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/workshop" element={<WorkshopPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

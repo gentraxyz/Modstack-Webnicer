@@ -111,12 +111,14 @@ export default function SignupPage() {
           </div>
 
           <div className="mb-5">
-            <label className="flex items-center gap-3 cursor-pointer group">
+            <label
+              className="flex items-center gap-3 cursor-pointer group select-none"
+              onClick={() => setUseProviderAvatar(v => !v)}
+            >
               <div
                 className={`w-10 h-6 rounded-full transition-colors relative flex-shrink-0 ${
                   useProviderAvatar ? 'bg-[#2596be]' : 'bg-zinc-700'
                 }`}
-                onClick={() => setUseProviderAvatar(v => !v)}
               >
                 <div
                   className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${

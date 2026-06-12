@@ -56,8 +56,8 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#2596be]/10 via-transparent to-transparent" />
 
       <header className="sticky top-0 z-20 backdrop-blur-md">
-        <div className="mx-auto max-w-5xl px-5 md:px-8 py-4 flex items-start justify-between gap-4">
-        <a className="logo" href="#">
+        <div className="mx-auto max-w-5xl px-5 md:px-8 py-4 flex items-center justify-between gap-4 relative">
+        <a className="logo" href="/">
           <div className="logo-mark">
             <img src={iconImg} alt="logo" />
           </div>
@@ -67,8 +67,13 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
             className="h-5 w-auto top-1 relative"
           />
         </a>
+          <div className="nav-center hidden md:flex items-center gap-1">
+            <a href="/" className="nav-item">Home</a>
+            <a href="/workshop" className="nav-item">Workshop</a>
+            <a href="/changelog" className="nav-item">Changelog</a>
+            <a href="/about" className="nav-item">About</a>
+          </div>
           <Button
-          isIconOnly
             variant="bordered"
             onPress={() => setTimeout(handleClose, 300)}
             className="!rounded-[8px] px-5 py-2 bg-[#2596be] text-white shadow-[0_4px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(29,123,158)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-auto font-medium ml-auto"

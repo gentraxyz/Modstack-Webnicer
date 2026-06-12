@@ -122,7 +122,7 @@ export default function NewsPage() {
 
       {/* Header */}
       <header className="sticky top-0 z-20 backdrop-blur-md border-b border-white/5">
-        <div className="mx-auto max-w-4xl px-5 md:px-8 py-4 flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-4xl px-5 md:px-8 py-4 flex items-center justify-between gap-4 relative">
           <a className="logo" href="/">
             <div className="logo-mark">
               <img src={iconImg} alt="logo" />
@@ -133,6 +133,12 @@ export default function NewsPage() {
               className="h-5 w-auto top-1 relative"
             />
           </a>
+          <div className="nav-center hidden md:flex items-center gap-1">
+            <a href="/" className="nav-item">Home</a>
+            <a href="/workshop" className="nav-item">Workshop</a>
+            <a href="/changelog" className="nav-item font-semibold text-[#2596be] bg-[#103444]/40 border border-[#2596be]/20">Changelog</a>
+            <a href="/about" className="nav-item">About</a>
+          </div>
           <Button
             variant="bordered"
             onPress={() => navigate("/")}
