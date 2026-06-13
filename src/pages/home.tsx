@@ -194,6 +194,20 @@ const modpacks = [
 function App() {
   const [expanded, setExpanded] = useState(false);
   const [latestNews, setLatestNews] = useState<any>(null);
+  const [detectedOS, setDetectedOS] = useState<"Windows" | "macOS" | "Linux" | "Mobile" | null>(null);
+
+  useEffect(() => {
+    const ua = window.navigator.userAgent.toLowerCase();
+    if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua)) {
+      setDetectedOS("Mobile");
+    } else if (ua.includes("win")) {
+      setDetectedOS("Windows");
+    } else if (ua.includes("mac")) {
+      setDetectedOS("macOS");
+    } else if (ua.includes("linux")) {
+      setDetectedOS("Linux");
+    }
+  }, []);
 
   useEffect(() => {
     fetch("/api/news")
@@ -210,6 +224,46 @@ function App() {
       })
       .catch((err) => console.error(err));
   }, []);
+
+  let primaryDownloadUrl = windowsExeUrl;
+  let primaryDownloadLabel = "Download for Windows";
+  let primaryDownloadIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 640 640"
+      className="w-6 h-6"
+    >
+      <path
+        fill="white"
+        d="M96 96L310.6 96L310.6 310.6L96 310.6L96 96zM329.4 96L544 96L544 310.6L329.4 310.6L329.4 96zM96 329.4L310.6 329.4L310.6 544L96 544L96 329.4zM329.4 329.4L544 329.4L544 544L329.4 544L329.4 329.4z"
+      />
+    </svg>
+  );
+
+  if (detectedOS === "macOS") {
+    primaryDownloadUrl = macDmgUrl;
+    primaryDownloadLabel = "Download for macOS";
+    primaryDownloadIcon = <AppleIcon />;
+  } else if (detectedOS === "Linux") {
+    primaryDownloadUrl = linuxAppImageUrl;
+    primaryDownloadLabel = "Download for Linux";
+    primaryDownloadIcon = <LinuxIcon />;
+  } else if (detectedOS === "Mobile") {
+    primaryDownloadUrl = windowsExeUrl;
+    primaryDownloadLabel = "Download for Desktop";
+    primaryDownloadIcon = (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 640 640"
+        className="w-6 h-6"
+      >
+        <path
+          fill="white"
+          d="M96 96L310.6 96L310.6 310.6L96 310.6L96 96zM329.4 96L544 96L544 310.6L329.4 310.6L329.4 96zM96 329.4L310.6 329.4L310.6 544L96 544L96 329.4zM329.4 329.4L544 329.4L544 544L329.4 544L329.4 329.4z"
+        />
+      </svg>
+    );
+  }
 
   return (
     <div
@@ -231,7 +285,12 @@ function App() {
             className="h-5 w-auto top-1 relative"
           />
         </a>
-        <div className="nav-center"></div>
+        <div className="nav-center hidden md:flex items-center gap-1">
+          <a href="/" className="nav-item font-semibold text-[#2596be] bg-[#103444]/40 border border-[#2596be]/20">Home</a>
+          <a href="/workshop" className="nav-item">Workshop</a>
+          <a href="/changelog" className="nav-item">Changelog</a>
+          <a href="/about" className="nav-item">About</a>
+        </div>
         <div className="nav-right">
           <a
             href="https://discord.gg/nxsDcYVa6s"
@@ -337,7 +396,7 @@ function App() {
           <h1 className="font-minecraft !font-normal !tracking-normal">
             Download Modstack
             <br />
-            for Windows
+            {detectedOS === "macOS" ? "for macOS" : detectedOS === "Linux" ? "for Linux" : detectedOS === "Mobile" ? "for Desktop" : "for Windows"}
           </h1>
           <p>
             Modstack is a unique launcher that lets you play your favorite mods
@@ -356,28 +415,21 @@ function App() {
           >
             <div className="hero-btns">
               <button
-                onClick={() => (window.location.href = windowsExeUrl)}
-                className="!rounded-[8px] px-8 py-4 bg-[#2596be] text-white shadow-[0_6px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_4px_0_rgb(29,123,158)] active:translate-y-[4px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center gap-3 w-full sm:w-auto"
+                onClick={() => (window.location.href = primaryDownloadUrl)}
+                className="!rounded-[8px] px-8 py-4 bg-[#2596be] text-white shadow-[0_6px_0_rgb(29,123,158)] hover:translate-y-[1px] hover:shadow-[0_4px_0_rgb(29,123,158)] active:translate-y-[4px] active:shadow-[0_1px_0_rgb(29,123,158)] active:scale-[0.98] transition-all duration-150 flex items-center justify-center gap-3 w-full sm:w-auto"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 640 640"
-                  className="w-6 h-6"
-                >
-                  <path
-                    fill="white"
-                    d="M96 96L310.6 96L310.6 310.6L96 310.6L96 96zM329.4 96L544 96L544 310.6L329.4 310.6L329.4 96zM96 329.4L310.6 329.4L310.6 544L96 544L96 329.4zM329.4 329.4L544 329.4L544 544L329.4 544L329.4 329.4z"
-                  />
-                </svg>
-                <span>Download for Windows</span>
+                {primaryDownloadIcon}
+                <span>{primaryDownloadLabel}</span>
                 <Download className="w-5 h-5" />
               </button>
 
               <button
                 onClick={() => setExpanded(!expanded)}
+                className="w-full sm:w-auto"
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "center",
                   gap: "8px",
                   backgroundColor: "rgba(255,255,255,0.05)",
                   border: "1px solid rgba(255,255,255,0.1)",
@@ -429,9 +481,10 @@ function App() {
               }}
             >
               <div
-                className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full"
+                className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full px-4 sm:px-0"
                 style={{
-                  padding: "4px 2px 8px",
+                  paddingTop: "4px",
+                  paddingBottom: "8px",
                 }}
               >
                 {/* Windows */}
@@ -520,7 +573,7 @@ function App() {
                 <img
                   src={previewImg}
                   alt="Modstack Launcher Preview"
-                  className="w-full h-[400px] md:h-[490px] object-cover pointer-events-none select-none"
+                  className="w-full h-auto md:h-[490px] md:object-cover pointer-events-none select-none"
                 />
               </CardBody>
             </Card>
@@ -534,21 +587,23 @@ function App() {
                 className="group flex flex-col md:flex-row items-stretch bg-zinc-900/20 backdrop-blur-sm border border-zinc-800/80 hover:border-[#2596be]/45 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-[#2596be]/5 text-left"
               >
                 {/* News Image */}
-                <div className="relative md:w-2/5 min-h-[160px] md:min-h-0 overflow-hidden bg-zinc-950/60 border-b md:border-b-0 md:border-r border-zinc-800/50 flex items-center justify-center">
-                  <img
-                    src={latestNews.image}
-                    alt={latestNews.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
-                    }}
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[9px] font-bold bg-[#2596be] text-black px-2.5 py-0.5 rounded tracking-wider uppercase">
-                      Latest Update
-                    </span>
+                {latestNews.image && (
+                  <div className="relative md:w-2/5 min-h-[160px] md:min-h-0 overflow-hidden bg-zinc-950/60 border-b md:border-b-0 md:border-r border-zinc-800/50 flex items-center justify-center">
+                    <img
+                      src={latestNews.image}
+                      alt={latestNews.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[9px] font-bold bg-[#2596be] text-black px-2.5 py-0.5 rounded tracking-wider uppercase">
+                        Latest Update
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* News Content */}
                 <div className="flex-1 p-6 flex flex-col justify-between gap-3">
@@ -635,22 +690,22 @@ function App() {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-zinc-800/50">
-                    <th className="p-6 text-slate-400 font-semibold text-sm uppercase tracking-wider whitespace-nowrap">
+                    <th className="p-3 sm:p-6 text-slate-400 font-semibold text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap">
                       Features
                     </th>
-                    <th className="p-6 text-center">
+                    <th className="p-3 sm:p-6 text-center">
                       <div className="flex flex-col items-center gap-2">
-                        <img src={iconImg} alt="Modstack" className="w-6 h-6" />
-                        <span className="text-white font-bold">Modstack</span>
+                        <img src={iconImg} alt="Modstack" className="w-5 h-5 sm:w-6 sm:h-6" />
+                        <span className="text-white font-bold text-xs sm:text-base">Modstack</span>
                       </div>
                     </th>
-                    <th className="p-6 text-center text-slate-400 font-medium">
+                    <th className="p-3 sm:p-6 text-center text-slate-400 font-medium text-xs sm:text-base">
                       Prism
                     </th>
-                    <th className="p-6 text-center text-slate-400 font-medium whitespace-nowrap">
+                    <th className="p-3 sm:p-6 text-center text-slate-400 font-medium text-xs sm:text-sm whitespace-nowrap">
                       Modrinth
                     </th>
-                    <th className="p-6 text-center text-slate-400 font-medium whitespace-nowrap">
+                    <th className="p-3 sm:p-6 text-center text-slate-400 font-medium text-xs sm:text-sm whitespace-nowrap">
                       CurseForge
                     </th>
                   </tr>
@@ -701,42 +756,42 @@ function App() {
                     },
                   ].map((row, i) => (
                     <tr key={i} className="hover:bg-white/5 transition-colors">
-                      <td className="p-6 text-white font-medium whitespace-nowrap">
+                      <td className="p-3 sm:p-6 text-white font-medium text-xs sm:text-base whitespace-nowrap">
                         {row.name}
                       </td>
-                      <td className="p-6 text-center">
+                      <td className="p-3 sm:p-6 text-center">
                         <div className="flex justify-center">
                           {row.modstack ? (
-                            <Check className="w-6 h-6 text-[#2596be]" />
+                            <Check className="w-5 h-5 sm:w-6 sm:h-6 text-[#2596be]" />
                           ) : (
-                            <X className="w-6 h-6 text-zinc-600" />
+                            <X className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-600" />
                           )}
                         </div>
                       </td>
-                      <td className="p-6 text-center">
+                      <td className="p-3 sm:p-6 text-center">
                         <div className="flex justify-center">
                           {row.prism ? (
-                            <Check className="w-6 h-6 text-zinc-400" />
+                            <Check className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-400" />
                           ) : (
-                            <X className="w-6 h-6 text-zinc-600" />
+                            <X className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-600" />
                           )}
                         </div>
                       </td>
-                      <td className="p-6 text-center">
+                      <td className="p-3 sm:p-6 text-center">
                         <div className="flex justify-center">
                           {row.modrinth ? (
-                            <Check className="w-6 h-6 text-zinc-400" />
+                            <Check className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-400" />
                           ) : (
-                            <X className="w-6 h-6 text-zinc-600" />
+                            <X className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-600" />
                           )}
                         </div>
                       </td>
-                      <td className="p-6 text-center">
+                      <td className="p-3 sm:p-6 text-center">
                         <div className="flex justify-center">
                           {row.curseforge ? (
-                            <Check className="w-6 h-6 text-zinc-400" />
+                            <Check className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-400" />
                           ) : (
-                            <X className="w-6 h-6 text-zinc-600" />
+                            <X className="w-5 h-5 sm:w-6 sm:h-6 text-zinc-600" />
                           )}
                         </div>
                       </td>
@@ -794,10 +849,10 @@ function App() {
       </div>
 
       <footer
+        className="px-5 sm:px-12 py-10"
         style={{
           backgroundColor: "#0a1219",
           borderTop: "1px solid #1e2d3d",
-          padding: "40px 48px 28px",
           marginTop: "80px",
           overflow: "hidden",
         }}
@@ -812,15 +867,13 @@ function App() {
           }}
         >
           <div
+            className="grid grid-cols-2 md:flex md:justify-between gap-8 md:gap-24"
             style={{
-              display: "flex",
-              justifyContent: "space-between",
               alignItems: "flex-start",
-              flexWrap: "wrap",
-              gap: "24px",
             }}
           >
             <div
+              className="col-span-2 md:col-span-1"
               style={{ display: "flex", flexDirection: "column", gap: "8px" }}
             >
               <div
