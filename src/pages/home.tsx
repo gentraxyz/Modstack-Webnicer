@@ -392,7 +392,7 @@ function App() {
         </svg>
 
         <div className="hero-content">
-          <div className="badge">v1.1.0 STABLE</div>
+          <div className="badge">v1.1.2 STABLE</div>
           <h1 className="font-minecraft !font-normal !tracking-normal">
             Download Modstack
             <br />
@@ -992,9 +992,6 @@ function App() {
               <div
                 style={{ display: "flex", flexDirection: "column", gap: "8px" }}
               >
-                <a href="/changelog" style={legalLinkStyle}>
-                  Change Log
-                </a>
                 <a href="/terms" style={legalLinkStyle}>
                   Terms & Conditions
                 </a>
