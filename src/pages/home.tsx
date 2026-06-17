@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 const windowsExeUrl =
-  "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack-setup.exe";
+  "https://github.com/Modstack-Launcher/ModstackInstaller/releases/download/v1.0.0/modstack-setup.exe";
 const linuxAppImageUrl =
   "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack.AppImage";
 const linuxDebUrl =
@@ -392,7 +392,7 @@ function App() {
         </svg>
 
         <div className="hero-content">
-          <div className="badge">v1.1.4 STABLE</div>
+          <div className="badge">v1.1.6 STABLE</div>
           <h1 className="font-minecraft !font-normal !tracking-normal">
             Download Modstack
             <br />
