@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 const windowsExeUrl =
-  "https://github.com/Modstack-Launcher/ModstackInstaller/releases/download/1.0.0/modstack-setup.exe";
+  "https://github.com/Modstack-Launcher/ModstackInstaller/releases/download/v1.0.0/modstack-setup.exe";
 const linuxAppImageUrl =
   "https://cdn.stackedhost.crysistudio.xyz/modstack/release/latest/modstack.AppImage";
 const linuxDebUrl =
