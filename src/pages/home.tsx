@@ -295,9 +295,10 @@ function App() {
             href="https://discord.gg/nxsDcYVa6s"
             target="_blank"
             rel="noopener noreferrer"
-            className="!rounded-[8px] px-3 py-2 bg-[#5865F2] text-white shadow-[0_4px_0_rgb(71,82,196)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(71,82,196)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(71,82,196)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-auto font-medium"
+            className="!rounded-[8px] px-4 py-2 bg-[#5865F2] text-white shadow-[0_4px_0_rgb(71,82,196)] hover:translate-y-[1px] hover:shadow-[0_3px_0_rgb(71,82,196)] active:translate-y-[3px] active:shadow-[0_1px_0_rgb(71,82,196)] active:scale-[0.98] transition-all duration-150 flex items-center gap-2.5 text-sm w-auto font-medium"
           >
             <DiscordIcon size={18} />
+            <span>Join Discord</span>
           </a>
           <AuthButton />
         </div>

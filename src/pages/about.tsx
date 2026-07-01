@@ -64,8 +64,8 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#2596be]/10 via-transparent to-transparent" />
 
-      <header className="sticky top-0 z-20 backdrop-blur-md">
-        <div className="mx-auto max-w-5xl px-5 md:px-8 py-4 flex items-center justify-between gap-4 relative">
+      <main className="relative z-10 mx-auto max-w-5xl px-5 md:px-8 py-8 md:py-12">
+        <div className="flex items-center justify-between gap-4 relative mb-10">
           <a className="logo" href="/">
             <div className="logo-mark">
               <img src={iconImg} alt="logo" />
@@ -106,9 +106,6 @@ export default function AboutPage({ open = false, onClose }: AboutPageProps) {
             <span>Back</span>
           </Button>
         </div>
-      </header>
-
-      <main className="relative z-10 mx-auto max-w-5xl px-5 md:px-8 py-8 md:py-12">
         <img
           src="/images/placeholder.png"
           alt="Modstack Logo"

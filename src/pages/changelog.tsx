@@ -120,9 +120,8 @@ export default function NewsPage() {
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#2596be]/10 via-transparent to-transparent" />
 
-      {/* Header */}
-      <header className="sticky top-0 z-20 backdrop-blur-md border-b border-white/5">
-        <div className="mx-auto max-w-4xl px-5 md:px-8 py-4 flex items-center justify-between gap-4 relative">
+      <main className="relative z-10 flex-1 mx-auto max-w-4xl w-full px-5 md:px-8 py-8 md:py-16 flex flex-col">
+        <div className="flex items-center justify-between gap-4 relative mb-10">
           <a className="logo" href="/">
             <div className="logo-mark">
               <img src={iconImg} alt="logo" />
@@ -147,11 +146,6 @@ export default function NewsPage() {
             <span>Back</span>
           </Button>
         </div>
-      </header>
-
-      {/* Main Container */}
-      <main className="relative z-10 flex-1 mx-auto max-w-4xl w-full px-5 md:px-8 py-8 md:py-16 flex flex-col">
-        {/* Title / Hero */}
         <div className="mb-10 text-left">
           <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-2">
             Changelog
