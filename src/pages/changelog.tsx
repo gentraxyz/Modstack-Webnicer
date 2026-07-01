@@ -135,7 +135,6 @@ export default function NewsPage() {
           </a>
           <div className="nav-center hidden md:flex items-center gap-1">
             <a href="/" className="nav-item">Home</a>
-            <a href="/workshop" className="nav-item">Workshop</a>
             <a href="/changelog" className="nav-item font-semibold text-[#2596be] bg-[#103444]/40 border border-[#2596be]/20">Changelog</a>
             <a href="/about" className="nav-item">About</a>
           </div>
