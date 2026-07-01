@@ -69,7 +69,6 @@ export default function TermsPage({ open = false, onClose }: TermsPageProps) {
         </a>
           <div className="nav-center hidden md:flex items-center gap-1">
             <a href="/" className="nav-item">Home</a>
-            <a href="/workshop" className="nav-item">Workshop</a>
             <a href="/changelog" className="nav-item">Changelog</a>
             <a href="/about" className="nav-item">About</a>
           </div>
