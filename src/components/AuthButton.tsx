@@ -276,7 +276,7 @@ export default function AuthButton({ className = '' }: AuthButtonProps) {
                 type="text"
                 value={newName}
                 onChange={(e) => {
-                  const val = e.target.value.replace(/[^a-zA-Z0-9_.\-]/g, '');
+                  const val = e.target.value.replace(/[^a-zA-Z0-9_.-]/g, '');
                   setNewName(val.slice(0, 32));
                   setNameError('');
                 }}
